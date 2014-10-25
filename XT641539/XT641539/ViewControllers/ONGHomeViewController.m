@@ -9,8 +9,7 @@
 #import "ONGHomeViewController.h"
 
 //Temp
-#import "ONGCluesViewController.h"
-#import "AppDelegate.h"
+#import "ONGCharacterSelectionViewController.h"
 
 @interface ONGHomeViewController ()
 
@@ -22,7 +21,7 @@
 - (IBAction)playButtonPressed:(UIButton *)sender {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ONGCluesViewController* cluesVC = [storyboard instantiateViewControllerWithIdentifier:@"ONGGameTabController"];
+    ONGCharacterSelectionViewController* cluesVC = [storyboard instantiateViewControllerWithIdentifier:@"ONGCharacterSelectionViewController"];
     [self.view.window setRootViewController:cluesVC];
 }
 
@@ -30,6 +29,7 @@
 #pragma mark Lifecycle
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
