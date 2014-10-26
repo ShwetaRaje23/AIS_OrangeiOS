@@ -58,11 +58,7 @@
         character.characterID = [NSNumber numberWithInteger:[[characterDict valueForKey:@"characterID"] integerValue]];
 //        character.role = [characterDict valueForKey:@"role"]; //Decimal From Enum
         
-        NSError* err;
-        [context save:&err];
-        if (err) {
-            NSLog(@"%@",err);
-        }
+        [context MR_saveToPersistentStoreAndWait];
     }else{
         
         //Update
@@ -74,33 +70,36 @@
     
     NSManagedObjectContext* context = [NSManagedObjectContext MR_context];
     Character* character = [self getCharacterFromId:[historyDict valueForKey:@"characterID"] inContext:context];
-    StoryHistory* history;
-    
+//    StoryHistory* history;
+    Clue* clue;
     
     if (!character) {
         //ERROR !
         NSLog(@"No character for history");
     }else{
         //Create history
-        history = [StoryHistory MR_createEntityInContext:context];
-        history.timestamp = [historyDict valueForKey:@"timestamp"];
-        history.action = [historyDict valueForKey:@"action"];
-        history.location = [historyDict valueForKey:@"location"];
-        history.character = character;
+//        history = [StoryHistory MR_createEntityInContext:context];
+//        history.timestamp = [historyDict valueForKey:@"timestamp"];
+//        history.action = [historyDict valueForKey:@"action"];
+//        history.location = [historyDict valueForKey:@"location"];
+//        history.character = character;
+
+        clue = [Clue getClueFromId:[historyDict valueForKey:@"clueId"] inContext:context];
+        if (!clue) {
+            clue = [Clue MR_createEntityInContext:context];
+            clue.isSolved = [NSNumber numberWithBool:NO];
+        }
+        clue.timestamp = [historyDict valueForKey:@"timestamp"];
+        clue.action = [historyDict valueForKey:@"action"];
+        clue.location = [historyDict valueForKey:@"location"];
+        clue.clueForCharacter = character;
         
         //Create Quest and Clues
-        Quest* quest = [Quest createQuestUsingHistory:history inContext:context];
-        Clue* clue = [Clue createClueUsingHistory:history inContext:context];
+        Quest* quest = [Quest createQuestUsingClue:clue inContext:context];
         
         clue.questForClue = quest;
-        clue.clueFromCharacter = character;
-        [context save:nil];
-        
-        NSError* err;
-        [context save:&err];
-        if (err) {
-            NSLog(@"%@",err);
-        }    }
+        [context MR_saveToPersistentStoreAndWait];
+    }
     
     
 }

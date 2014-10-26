@@ -2,7 +2,7 @@
 //  LocationBasedQuest.h
 //  XT641539
 //
-//  Created by Raje, Shweta Nitin on 10/25/14.
+//  Created by Salunke, Shanu on 10/26/14.
 //  Copyright (c) 2014 Orange. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface LocationBasedQuest : Quest
 
-@property (nonatomic, retain) NSDecimalNumber * steps;
 @property (nonatomic, retain) NSDecimalNumber * direction;
+@property (nonatomic, retain) NSDecimalNumber * steps;
 
 @end

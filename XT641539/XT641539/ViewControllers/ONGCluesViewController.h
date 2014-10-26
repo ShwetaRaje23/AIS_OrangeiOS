@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Clue+Extended.h"
 #import "Quest+Extended.h"
+#import "Character+Extended.h"
 
 @interface ONGCluesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

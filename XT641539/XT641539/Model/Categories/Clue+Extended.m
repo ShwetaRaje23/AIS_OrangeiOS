@@ -10,18 +10,19 @@
 
 @implementation Clue (Extended)
 
-+ (Clue*)createClueUsingHistory:(StoryHistory *)history inContext:(NSManagedObjectContext *)context{
++ (Clue*) getClueFromId:(NSString*)clueId inContext:(NSManagedObjectContext*)context{
     
+    NSPredicate* findCharacterWithIDPredicate = [NSPredicate predicateWithFormat:@"clueId == %@",[NSNumber numberWithInteger:[clueId integerValue]]];
     
-    Clue* clue = [Clue MR_createEntityInContext:context];
+    NSArray* cluesWithId = [Clue MR_findAllWithPredicate:findCharacterWithIDPredicate inContext:context];
+    Clue* clue = nil;
     
-    clue.isSolved = [NSNumber numberWithBool:NO];
-    clue.timestamp = history.timestamp;
-    clue.clueText = [NSString stringWithFormat:@"%@ %@ at the %@", history.character, history.action, history.location];
-    
-    [context save:nil];
-    
-    
+    if (cluesWithId.count == 0) {
+        //No Clue Found
+    }
+    else{
+        clue = [cluesWithId firstObject];
+    }
     return clue;
 }
 

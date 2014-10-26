@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3125C1CD19FD878F00576334 /* ONGDialogueMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1CC19FD878F00576334 /* ONGDialogueMessagesViewController.m */; };
+		3125C1D019FD89C500576334 /* ONGDialogueMEssageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1CF19FD89C500576334 /* ONGDialogueMEssageTableViewCell.m */; };
+		3125C1D319FD978200576334 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1D219FD978200576334 /* Character.m */; };
+		3125C1D919FD978200576334 /* LocationBasedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1D819FD978200576334 /* LocationBasedQuest.m */; };
+		3125C1DC19FD978200576334 /* Personality.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1DB19FD978200576334 /* Personality.m */; };
+		3125C1DF19FD978200576334 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1DE19FD978200576334 /* Quest.m */; };
+		3125C1E219FD978200576334 /* Relationship.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1E119FD978200576334 /* Relationship.m */; };
+		3125C1E519FD978200576334 /* TimeBasedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1E419FD978200576334 /* TimeBasedQuest.m */; };
+		3125C1EB19FD978200576334 /* ActionBasedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1EA19FD978200576334 /* ActionBasedQuest.m */; };
+		3125C1EE19FD99DD00576334 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1ED19FD99DD00576334 /* Clue.m */; };
+		3125C1F119FDA75B00576334 /* DialogueMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3125C1F019FDA75B00576334 /* DialogueMessage.m */; };
 		C12D0EEF19F6D4AA00EA2B26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D0EEE19F6D4AA00EA2B26 /* main.m */; };
 		C12D0EF219F6D4AA00EA2B26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D0EF119F6D4AA00EA2B26 /* AppDelegate.m */; };
 		C12D0EF519F6D4AA00EA2B26 /* XT641539.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C12D0EF319F6D4AA00EA2B26 /* XT641539.xcdatamodeld */; };
@@ -48,16 +59,6 @@
 		C89A302E19FC56BA00650370 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A301019FC56BA00650370 /* MagicalRecord.m */; };
 		C89A306F19FC698600650370 /* sampleServerResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C89A306E19FC698600650370 /* sampleServerResponse.json */; };
 		C89A307219FC6B2D00650370 /* Character+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A307119FC6B2D00650370 /* Character+Extended.m */; };
-		C89A309619FC707800650370 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A309519FC707800650370 /* Clue.m */; };
-		C89A309919FC707800650370 /* DialogueMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A309819FC707800650370 /* DialogueMessage.m */; };
-		C89A309C19FC707800650370 /* LocationBasedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A309B19FC707800650370 /* LocationBasedQuest.m */; };
-		C89A309F19FC707800650370 /* Relationship.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A309E19FC707800650370 /* Relationship.m */; };
-		C89A30A219FC707800650370 /* TimeBasedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30A119FC707800650370 /* TimeBasedQuest.m */; };
-		C89A30A519FC707800650370 /* ActionBasedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30A419FC707800650370 /* ActionBasedQuest.m */; };
-		C89A30A819FC707800650370 /* StoryHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30A719FC707800650370 /* StoryHistory.m */; };
-		C89A30AB19FC707800650370 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30AA19FC707800650370 /* Character.m */; };
-		C89A30AE19FC707800650370 /* Personality.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30AD19FC707800650370 /* Personality.m */; };
-		C89A30B119FC707800650370 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30B019FC707800650370 /* Quest.m */; };
 		C89A30B419FC7A3900650370 /* Quest+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30B319FC7A3900650370 /* Quest+Extended.m */; };
 		C89A30B719FC7A4500650370 /* Clue+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30B619FC7A4500650370 /* Clue+Extended.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3125C1CB19FD878F00576334 /* ONGDialogueMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ONGDialogueMessagesViewController.h; path = ViewControllers/ONGDialogueMessagesViewController.h; sourceTree = "<group>"; };
+		3125C1CC19FD878F00576334 /* ONGDialogueMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ONGDialogueMessagesViewController.m; path = ViewControllers/ONGDialogueMessagesViewController.m; sourceTree = "<group>"; };
+		3125C1CE19FD89C500576334 /* ONGDialogueMEssageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ONGDialogueMEssageTableViewCell.h; path = "ViewControllers/Custom Views/ONGDialogueMEssageTableViewCell.h"; sourceTree = "<group>"; };
+		3125C1CF19FD89C500576334 /* ONGDialogueMEssageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ONGDialogueMEssageTableViewCell.m; path = "ViewControllers/Custom Views/ONGDialogueMEssageTableViewCell.m"; sourceTree = "<group>"; };
+		3125C1D119FD978200576334 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		3125C1D219FD978200576334 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		3125C1D719FD978200576334 /* LocationBasedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBasedQuest.h; sourceTree = "<group>"; };
+		3125C1D819FD978200576334 /* LocationBasedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBasedQuest.m; sourceTree = "<group>"; };
+		3125C1DA19FD978200576334 /* Personality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Personality.h; sourceTree = "<group>"; };
+		3125C1DB19FD978200576334 /* Personality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Personality.m; sourceTree = "<group>"; };
+		3125C1DD19FD978200576334 /* Quest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quest.h; sourceTree = "<group>"; };
+		3125C1DE19FD978200576334 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quest.m; sourceTree = "<group>"; };
+		3125C1E019FD978200576334 /* Relationship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relationship.h; sourceTree = "<group>"; };
+		3125C1E119FD978200576334 /* Relationship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relationship.m; sourceTree = "<group>"; };
+		3125C1E319FD978200576334 /* TimeBasedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBasedQuest.h; sourceTree = "<group>"; };
+		3125C1E419FD978200576334 /* TimeBasedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeBasedQuest.m; sourceTree = "<group>"; };
+		3125C1E919FD978200576334 /* ActionBasedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionBasedQuest.h; sourceTree = "<group>"; };
+		3125C1EA19FD978200576334 /* ActionBasedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionBasedQuest.m; sourceTree = "<group>"; };
+		3125C1EC19FD99DD00576334 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
+		3125C1ED19FD99DD00576334 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
+		3125C1EF19FDA75B00576334 /* DialogueMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueMessage.h; sourceTree = "<group>"; };
+		3125C1F019FDA75B00576334 /* DialogueMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogueMessage.m; sourceTree = "<group>"; };
 		C12D0EE919F6D4AA00EA2B26 /* XT641539.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XT641539.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12D0EED19F6D4AA00EA2B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C12D0EEE19F6D4AA00EA2B26 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -157,26 +180,6 @@
 		C89A306E19FC698600650370 /* sampleServerResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleServerResponse.json; sourceTree = "<group>"; };
 		C89A307019FC6B2D00650370 /* Character+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Character+Extended.h"; sourceTree = "<group>"; };
 		C89A307119FC6B2D00650370 /* Character+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Character+Extended.m"; sourceTree = "<group>"; };
-		C89A309419FC707800650370 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
-		C89A309519FC707800650370 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
-		C89A309719FC707800650370 /* DialogueMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueMessage.h; sourceTree = "<group>"; };
-		C89A309819FC707800650370 /* DialogueMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogueMessage.m; sourceTree = "<group>"; };
-		C89A309A19FC707800650370 /* LocationBasedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBasedQuest.h; sourceTree = "<group>"; };
-		C89A309B19FC707800650370 /* LocationBasedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBasedQuest.m; sourceTree = "<group>"; };
-		C89A309D19FC707800650370 /* Relationship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relationship.h; sourceTree = "<group>"; };
-		C89A309E19FC707800650370 /* Relationship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relationship.m; sourceTree = "<group>"; };
-		C89A30A019FC707800650370 /* TimeBasedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBasedQuest.h; sourceTree = "<group>"; };
-		C89A30A119FC707800650370 /* TimeBasedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeBasedQuest.m; sourceTree = "<group>"; };
-		C89A30A319FC707800650370 /* ActionBasedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionBasedQuest.h; sourceTree = "<group>"; };
-		C89A30A419FC707800650370 /* ActionBasedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionBasedQuest.m; sourceTree = "<group>"; };
-		C89A30A619FC707800650370 /* StoryHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryHistory.h; sourceTree = "<group>"; };
-		C89A30A719FC707800650370 /* StoryHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryHistory.m; sourceTree = "<group>"; };
-		C89A30A919FC707800650370 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
-		C89A30AA19FC707800650370 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
-		C89A30AC19FC707800650370 /* Personality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Personality.h; sourceTree = "<group>"; };
-		C89A30AD19FC707800650370 /* Personality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Personality.m; sourceTree = "<group>"; };
-		C89A30AF19FC707800650370 /* Quest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quest.h; sourceTree = "<group>"; };
-		C89A30B019FC707800650370 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quest.m; sourceTree = "<group>"; };
 		C89A30B219FC7A3900650370 /* Quest+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Quest+Extended.h"; sourceTree = "<group>"; };
 		C89A30B319FC7A3900650370 /* Quest+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Quest+Extended.m"; sourceTree = "<group>"; };
 		C89A30B519FC7A4500650370 /* Clue+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Clue+Extended.h"; sourceTree = "<group>"; };
@@ -272,10 +275,10 @@
 		C12D0F1619F6D4F500EA2B26 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C12D0F2819F6DAEF00EA2B26 /* Dialogue */,
 				C12D0F2019F6DAB400EA2B26 /* Home Screen */,
 				C89A2E0319FC3F3C00650370 /* Character Selection */,
 				C12D0F2419F6DAD600EA2B26 /* Clues Tab */,
-				C12D0F2819F6DAEF00EA2B26 /* Dialogue */,
 				C12D0F2D19F6DB1400EA2B26 /* Whodunnit */,
 			);
 			name = ViewControllers;
@@ -332,6 +335,10 @@
 			children = (
 				C12D0F2519F6DAEB00EA2B26 /* ONGDialogueViewController.h */,
 				C12D0F2619F6DAEB00EA2B26 /* ONGDialogueViewController.m */,
+				3125C1CB19FD878F00576334 /* ONGDialogueMessagesViewController.h */,
+				3125C1CC19FD878F00576334 /* ONGDialogueMessagesViewController.m */,
+				3125C1CE19FD89C500576334 /* ONGDialogueMEssageTableViewCell.h */,
+				3125C1CF19FD89C500576334 /* ONGDialogueMEssageTableViewCell.m */,
 			);
 			name = Dialogue;
 			sourceTree = "<group>";
@@ -470,26 +477,24 @@
 		C89A304E19FC637800650370 /* Subclass */ = {
 			isa = PBXGroup;
 			children = (
-				C89A30AF19FC707800650370 /* Quest.h */,
-				C89A30B019FC707800650370 /* Quest.m */,
-				C89A30AC19FC707800650370 /* Personality.h */,
-				C89A30AD19FC707800650370 /* Personality.m */,
-				C89A30A919FC707800650370 /* Character.h */,
-				C89A30AA19FC707800650370 /* Character.m */,
-				C89A30A619FC707800650370 /* StoryHistory.h */,
-				C89A30A719FC707800650370 /* StoryHistory.m */,
-				C89A30A319FC707800650370 /* ActionBasedQuest.h */,
-				C89A30A419FC707800650370 /* ActionBasedQuest.m */,
-				C89A30A019FC707800650370 /* TimeBasedQuest.h */,
-				C89A30A119FC707800650370 /* TimeBasedQuest.m */,
-				C89A309D19FC707800650370 /* Relationship.h */,
-				C89A309E19FC707800650370 /* Relationship.m */,
-				C89A309A19FC707800650370 /* LocationBasedQuest.h */,
-				C89A309B19FC707800650370 /* LocationBasedQuest.m */,
-				C89A309719FC707800650370 /* DialogueMessage.h */,
-				C89A309819FC707800650370 /* DialogueMessage.m */,
-				C89A309419FC707800650370 /* Clue.h */,
-				C89A309519FC707800650370 /* Clue.m */,
+				3125C1EF19FDA75B00576334 /* DialogueMessage.h */,
+				3125C1F019FDA75B00576334 /* DialogueMessage.m */,
+				3125C1EC19FD99DD00576334 /* Clue.h */,
+				3125C1ED19FD99DD00576334 /* Clue.m */,
+				3125C1E919FD978200576334 /* ActionBasedQuest.h */,
+				3125C1EA19FD978200576334 /* ActionBasedQuest.m */,
+				3125C1E319FD978200576334 /* TimeBasedQuest.h */,
+				3125C1E419FD978200576334 /* TimeBasedQuest.m */,
+				3125C1E019FD978200576334 /* Relationship.h */,
+				3125C1E119FD978200576334 /* Relationship.m */,
+				3125C1DD19FD978200576334 /* Quest.h */,
+				3125C1DE19FD978200576334 /* Quest.m */,
+				3125C1DA19FD978200576334 /* Personality.h */,
+				3125C1DB19FD978200576334 /* Personality.m */,
+				3125C1D719FD978200576334 /* LocationBasedQuest.h */,
+				3125C1D819FD978200576334 /* LocationBasedQuest.m */,
+				3125C1D119FD978200576334 /* Character.h */,
+				3125C1D219FD978200576334 /* Character.m */,
 			);
 			name = Subclass;
 			path = Model/Subclass;
@@ -611,53 +616,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12D0F2C19F6DB1000EA2B26 /* ONGWhudunnitViewController.m in Sources */,
-				C89A309919FC707800650370 /* DialogueMessage.m in Sources */,
 				C89A301919FC56BA00650370 /* NSObject+MagicalDataImport.m in Sources */,
-				C89A309C19FC707800650370 /* LocationBasedQuest.m in Sources */,
+				3125C1EE19FD99DD00576334 /* Clue.m in Sources */,
 				C89A302719FC56BA00650370 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				C12D0EF219F6D4AA00EA2B26 /* AppDelegate.m in Sources */,
-				C89A30AE19FC707800650370 /* Personality.m in Sources */,
 				C89A301819FC56BA00650370 /* NSNumber+MagicalDataImport.m in Sources */,
+				3125C1E219FD978200576334 /* Relationship.m in Sources */,
+				3125C1D319FD978200576334 /* Character.m in Sources */,
 				C89A302219FC56BA00650370 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				C89A302419FC56BA00650370 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				C12D0F2319F6DAD200EA2B26 /* ONGCluesViewController.m in Sources */,
 				C12D0EF519F6D4AA00EA2B26 /* XT641539.xcdatamodeld in Sources */,
-				C89A309F19FC707800650370 /* Relationship.m in Sources */,
 				C89A301A19FC56BA00650370 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				C89A30B419FC7A3900650370 /* Quest+Extended.m in Sources */,
 				C89A30B719FC7A4500650370 /* Clue+Extended.m in Sources */,
+				3125C1D919FD978200576334 /* LocationBasedQuest.m in Sources */,
 				C89A302019FC56BA00650370 /* NSManagedObject+MagicalRequests.m in Sources */,
 				C89A302E19FC56BA00650370 /* MagicalRecord.m in Sources */,
 				C12D0F1F19F6D61B00EA2B26 /* ONGHomeViewController.m in Sources */,
-				C89A30A519FC707800650370 /* ActionBasedQuest.m in Sources */,
+				3125C1F119FDA75B00576334 /* DialogueMessage.m in Sources */,
 				C89A302619FC56BA00650370 /* NSPersistentStore+MagicalRecord.m in Sources */,
-				C89A30A219FC707800650370 /* TimeBasedQuest.m in Sources */,
+				3125C1D019FD89C500576334 /* ONGDialogueMEssageTableViewCell.m in Sources */,
 				C89A302519FC56BA00650370 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				C89A307219FC6B2D00650370 /* Character+Extended.m in Sources */,
 				C89A301619FC56BA00650370 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				3125C1E519FD978200576334 /* TimeBasedQuest.m in Sources */,
 				C89A301519FC56BA00650370 /* MagicalImportFunctions.m in Sources */,
 				C12D0EEF19F6D4AA00EA2B26 /* main.m in Sources */,
 				C89A302119FC56BA00650370 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				C89A302C19FC56BA00650370 /* MagicalRecord+Setup.m in Sources */,
+				3125C1EB19FD978200576334 /* ActionBasedQuest.m in Sources */,
 				C89A301C19FC56BA00650370 /* NSManagedObject+MagicalAggregation.m in Sources */,
-				C89A30A819FC707800650370 /* StoryHistory.m in Sources */,
+				3125C1CD19FD878F00576334 /* ONGDialogueMessagesViewController.m in Sources */,
 				C89A302D19FC56BA00650370 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C89A2E0219FC3F3800650370 /* ONGCharacterSelectionViewController.m in Sources */,
 				C89A2E0619FC416000650370 /* ONGCharacterTableViewCell.m in Sources */,
 				C89A301B19FC56BA00650370 /* NSString+MagicalDataImport.m in Sources */,
 				C89A302B19FC56BA00650370 /* MagicalRecord+Options.m in Sources */,
-				C89A30B119FC707800650370 /* Quest.m in Sources */,
+				3125C1DC19FD978200576334 /* Personality.m in Sources */,
 				C89A301F19FC56BA00650370 /* NSManagedObject+MagicalRecord.m in Sources */,
+				3125C1DF19FD978200576334 /* Quest.m in Sources */,
 				C89A302819FC56BA00650370 /* MagicalRecord+Actions.m in Sources */,
 				C89A301D19FC56BA00650370 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				C89A302A19FC56BA00650370 /* MagicalRecord+iCloud.m in Sources */,
 				C89A301719FC56BA00650370 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				C89A302319FC56BA00650370 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				C89A301E19FC56BA00650370 /* NSManagedObject+MagicalFinders.m in Sources */,
-				C89A309619FC707800650370 /* Clue.m in Sources */,
 				C12D0F2719F6DAEB00EA2B26 /* ONGDialogueViewController.m in Sources */,
 				C89A302919FC56BA00650370 /* MagicalRecord+ErrorHandling.m in Sources */,
-				C89A30AB19FC707800650370 /* Character.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

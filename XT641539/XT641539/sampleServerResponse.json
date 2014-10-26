@@ -30,43 +30,44 @@
 				"name":"General",
 				 "characterID":"5",
 				 "role":"player"
-				},
-				{
-				"name":"Uncle",
-				 "characterID":"6",
-				 "role":"player"
-				},
+				}
 				],
 "storyHistory":[
 				{"timestamp":"Jun 2011 09:30:16 GMT",
 				 "action":"heard fight",
 				 "location":"garden",
-				 "characterID":"1"
+				 "characterID":"1",
+                 "clueId":"1"
 				},
 				{"timestamp":"Jun 2011 10:30:16 GMT",
 				 "action":"saw",
 				 "location":"Governor's room",
-				 "characterID":"1"
+				 "characterID":"1",
+                "clueId":"2"
 				},
 				{"timestamp":"Jun 2011 11:30:16 GMT",
 				 "action":"caught",
 				 "location":"Governor's bedroom",
-				 "characterID":"1"
+				 "characterID":"1",
+                "clueId":"3"
 				},
 				{"timestamp":"Jun 2011 11:30:16 GMT",
 				 "action":"saw",
 				 "location":"Governor's office",
-				 "characterID":"2"
+				 "characterID":"2",
+                "clueId":"4"
 				},
 				{"timestamp":"Jun 2011 11:30:16 GMT",
 				 "action":"saw",
 				 "location":"Governor's Room",
-				 "characterID":"2"
+				 "characterID":"2",
+                "clueId":"5"
 				},
 				{"timestamp":"Jun 2011 11:30:16 GMT",
 				 "action":"heard a conversation",
 				 "location":"Governor's Office",
-				 "characterID":"2"
+				 "characterID":"2",
+                "clueId":"6"
 				}
 				]
 }

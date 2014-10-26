@@ -7,10 +7,9 @@
 //
 
 #import "Clue.h"
-#import "StoryHistory.h"
+#import "Clue+Extended.h"
 #import "Quest+Extended.h"
 
 @interface Clue (Extended)
-+ (Clue*)createClueUsingHistory:(StoryHistory*)history inContext:(NSManagedObjectContext*)context;
-
++ (Clue*) getClueFromId:(NSString*)clueId inContext:(NSManagedObjectContext*)context;
 @end

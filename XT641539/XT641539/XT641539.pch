@@ -24,5 +24,6 @@
 #define USER_CHARACTERNAME_KEY @"name"
 #define USER_CHARACTERID_KEY @"charID"
 #define USER_CHARACTER_DESCRIPTION_KEY @"description"
+#define LOGGED_IN_CHARACTER @"loggedInCharacterId"
 
 #endif

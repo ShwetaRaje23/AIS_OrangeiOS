@@ -10,11 +10,11 @@
 
 @implementation Quest (Extended)
 
-+ (Quest*) createQuestUsingHistory:(StoryHistory *)history inContext:(NSManagedObjectContext *)context{
++ (Quest*) createQuestUsingClue:(Clue *)clue inContext:(NSManagedObjectContext *)context{
     
     Quest *quest = [Quest MR_createEntityInContext:context];
-    quest.questText = history.location;
-    [context save:nil];
+    quest.questText = @"Mystery Location";//clue.location;
+    [context MR_saveToPersistentStoreAndWait];
     return quest;
 }
 

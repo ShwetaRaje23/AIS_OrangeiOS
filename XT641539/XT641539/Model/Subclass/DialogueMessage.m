@@ -2,7 +2,7 @@
 //  DialogueMessage.m
 //  XT641539
 //
-//  Created by Raje, Shweta Nitin on 10/25/14.
+//  Created by Salunke, Shanu on 10/26/14.
 //  Copyright (c) 2014 Orange. All rights reserved.
 //
 
@@ -12,9 +12,11 @@
 
 @implementation DialogueMessage
 
-@dynamic timestamp;
-@dynamic messageText;
 @dynamic messageId;
-@dynamic messageFromCharacter;
+@dynamic messageText;
+@dynamic timestamp;
+@dynamic recievedFromCharacter;
+@dynamic clueId;
+@dynamic withCharacter;
 
 @end

@@ -7,8 +7,14 @@
 //
 
 #import "ONGDialogueViewController.h"
+#import "ONGCluesViewController.h"
+#import "Character+Extended.h"
+#import "ONGDialogueMessagesViewController.h"
+
 
 @interface ONGDialogueViewController ()
+@property (nonatomic,strong) NSArray* characterList;
+@property (nonatomic,strong) NSManagedObjectContext* context;
 
 @end
 
@@ -17,62 +23,73 @@
 #pragma mark TableView Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 15;
+    return self.characterList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifierUs = @"dialogueCellUs";
-    static NSString *CellIdentifierThem = @"dialogueCellThem";
     
-    UITableViewCell *cell;
+    static NSString *CellIdentifier = @"characterCell";
     
-    if (indexPath.row % 2 == 0) {
-        //Us
-        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierUs];
-        cell.textLabel.text = [NSString stringWithFormat:@"cell%li%li", (long)indexPath.section, (long)indexPath.row];
-    }
-    else{
-        //Them
-        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierThem];
-        cell.textLabel.text = [NSString stringWithFormat:@"cell%li%li", (long)indexPath.section, (long)indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    
-    
-    
+    Character* character = [self.characterList objectAtIndex:indexPath.row];
+    cell.textLabel.text = character.name;
     
     return cell;
 }
 
 #pragma mark Tableview Delegates
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+        
 }
-
 
 #pragma mark Lifecycle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    //Tableview Extends below tabbar
-    self.edgesForExtendedLayout = UIRectEdgeAll;
-    self.tableView.contentInset = UIEdgeInsetsMake(0., 0., CGRectGetHeight(self.tabBarController.tabBar.frame), 0);
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)viewDidAppear:(BOOL)animated{
+    
+    
+    [super viewDidAppear:animated];
+    
+    //Get characters from database
+    self.context = [NSManagedObjectContext MR_context];
+    
+    //Logged In Character
+    NSString* loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
+    
+    NSPredicate* notMePRedicate = [NSPredicate predicateWithFormat:@"characterID != %@",[NSNumber numberWithInteger:[loggedInCharacterID integerValue]]];
+    self.characterList = [Character MR_findAllWithPredicate:notMePRedicate inContext:self.context];
+    [self.tableView reloadData];
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    //Get Character
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    
+    
+    ONGDialogueMessagesViewController* messageVC = (ONGDialogueMessagesViewController*)[segue destinationViewController];
+    messageVC.characterToTalkTo = [self.characterList objectAtIndex:indexPath.row];
 }
-*/
+
 
 @end

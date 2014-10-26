@@ -7,12 +7,12 @@
 //
 
 #import "Character.h"
-#import "StoryHistory.h"
 #import "Quest+Extended.h"
 #import "Clue+Extended.h"
 
 @interface Character (Extended)
 
++ (Character*) getCharacterFromId:(NSString*)characterID inContext:(NSManagedObjectContext*)context;
 + (void) parseStoryData:(NSDictionary*)storyData;
 
 @end

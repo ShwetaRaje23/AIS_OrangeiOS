@@ -2,7 +2,7 @@
 //  Character.m
 //  XT641539
 //
-//  Created by Raje, Shweta Nitin on 10/25/14.
+//  Created by Salunke, Shanu on 10/26/14.
 //  Copyright (c) 2014 Orange. All rights reserved.
 //
 
@@ -11,18 +11,16 @@
 #import "DialogueMessage.h"
 #import "Personality.h"
 #import "Relationship.h"
-#import "StoryHistory.h"
 
 
 @implementation Character
 
-@dynamic name;
 @dynamic characterID;
+@dynamic name;
 @dynamic role;
-@dynamic personality;
-@dynamic relationship;
 @dynamic clues;
 @dynamic dialogueMessages;
-@dynamic storyHistory;
+@dynamic personality;
+@dynamic relationship;
 
 @end

@@ -46,12 +46,20 @@
 
 #pragma mark Tableview Delegates
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
+    //Get Selected Character
+    Character* selectedCharacter = [self.characterList objectAtIndex:indexPath.row];
+    
+    //Store character id in nsuserdefaults
+    [[NSUserDefaults standardUserDefaults] setObject:selectedCharacter.characterID forKey:LOGGED_IN_CHARACTER];
+    
+    
+    //Show the Game Tabs
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ONGCluesViewController* cluesVC = [storyboard instantiateViewControllerWithIdentifier:@"ONGGameTabController"];
     [self.view.window setRootViewController:cluesVC];
-    
 }
 
 #pragma mark Lifecycle

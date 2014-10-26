@@ -2,7 +2,7 @@
 //  DialogueMessage.h
 //  XT641539
 //
-//  Created by Raje, Shweta Nitin on 10/25/14.
+//  Created by Salunke, Shanu on 10/26/14.
 //  Copyright (c) 2014 Orange. All rights reserved.
 //
 
@@ -13,9 +13,11 @@
 
 @interface DialogueMessage : NSManagedObject
 
-@property (nonatomic, retain) NSString * timestamp;
-@property (nonatomic, retain) NSString * messageText;
 @property (nonatomic, retain) NSString * messageId;
-@property (nonatomic, retain) Character *messageFromCharacter;
+@property (nonatomic, retain) NSString * messageText;
+@property (nonatomic, retain) NSString * timestamp;
+@property (nonatomic, retain) NSNumber * recievedFromCharacter;
+@property (nonatomic, retain) NSString * clueId;
+@property (nonatomic, retain) Character *withCharacter;
 
 @end
