@@ -7,6 +7,7 @@
 //
 
 #import "ONGHomeViewController.h"
+#import "Character+Extended.h"
 
 //Temp
 #import "ONGCharacterSelectionViewController.h"
@@ -34,19 +35,32 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    [self parseStoryJSON];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+//TODO Remove and put in a game manger file
+#pragma mark Helper
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) parseStoryJSON{
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sampleServerResponse" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    
+    NSLog(@"%@",json);
+    
+    //Parse Story Data
+    [Character parseStoryData:json];
 }
-*/
 
 @end

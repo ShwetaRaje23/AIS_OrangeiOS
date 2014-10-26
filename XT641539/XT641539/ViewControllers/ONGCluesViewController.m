@@ -9,6 +9,8 @@
 #import "ONGCluesViewController.h"
 
 @interface ONGCluesViewController ()
+@property (nonatomic,strong) NSMutableArray* clues;
+@property (nonatomic,strong) NSManagedObjectContext* context;
 
 @end
 
@@ -18,7 +20,7 @@
 #pragma mark TableView Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 15;
+    return self.clues.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -28,7 +30,22 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"cell%li%li", (long)indexPath.section, (long)indexPath.row];
+    
+    Clue* clue = [self.clues objectAtIndex:indexPath.row];
+    NSString* displayString;
+    
+    if ([clue.isSolved isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+        //Dispaly Clue
+        displayString = [NSString stringWithFormat:@"C: %@",clue.clueText];
+    }else{
+        //Dispaly Quest
+        displayString = [NSString stringWithFormat:@"Q: %@",clue.questForClue.questText];
+    }
+    
+    
+    NSLog(@"%@",clue);
+    
+    cell.textLabel.text = displayString;
     return cell;
 }
 
@@ -37,8 +54,14 @@
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    [self performSegueWithIdentifier:@"showClue" sender:self];
+    //[self performSegueWithIdentifier:@"showClue" sender:self];
     
+    Clue *clue = [self.clues objectAtIndex:indexPath.row];
+    clue.isSolved = [NSNumber numberWithBool:YES];
+    clue.clueText = clue.questForClue.questText;
+    [clue.managedObjectContext save:nil];
+    
+    [self.tableView reloadData];
 }
 
 
@@ -58,6 +81,35 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     
+    [super viewDidAppear:animated];
+    
+    //Get All quests and clues from database
+    self.context = [NSManagedObjectContext MR_context];
+    self.clues = [[NSMutableArray alloc]initWithCapacity:1];
+    
+    //Temp
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm:ss:ms"];
+    NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
+    
+    //Get first default clue
+    Clue* defaultClue = [Clue MR_createEntityInContext:self.context];
+    defaultClue.clueText = stringFromDate;
+    defaultClue.isSolved = [NSNumber numberWithBool:YES];
+    [self.context save:nil];
+    [self.clues insertObject:defaultClue atIndex:0];
+    
+    //Get all solved Clues
+    NSPredicate* solvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:YES]];
+    [self.clues addObjectsFromArray:[Clue MR_findAllWithPredicate:solvedClues inContext:self.context]];
+    
+    //Get one quest (temporarily random)
+    NSPredicate* unsolvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:NO]];
+    [self.clues insertObject:[[Clue MR_findAllWithPredicate:unsolvedClues inContext:self.context] firstObject] atIndex:0];
+    
+    
+    NSLog(@"%@",self.clues);
+    [self.tableView reloadData];
     
 }
 

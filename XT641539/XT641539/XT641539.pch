@@ -13,9 +13,14 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 
+//3rd Oarty Libraries
+#import "CoreData+MagicalRecord.h"
+
+//Imports
 #import "AppDelegate.h"
 
 
+//Defines
 #define USER_CHARACTERNAME_KEY @"name"
 #define USER_CHARACTERID_KEY @"charID"
 #define USER_CHARACTER_DESCRIPTION_KEY @"description"

@@ -1,4 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ActionBasedQuest" representedClassName="ActionBasedQuest" parentEntity="Quest" syncable="YES">
+        <attribute name="anagramOfString" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Character" representedClassName="Character" syncable="YES">
+        <attribute name="characterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="clues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Clue" syncable="YES"/>
+        <relationship name="dialogueMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DialogueMessage" syncable="YES"/>
+        <relationship name="personality" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Personality" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relationship" syncable="YES"/>
+        <relationship name="storyHistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoryHistory" inverseName="character" inverseEntity="StoryHistory" syncable="YES"/>
+    </entity>
+    <entity name="Clue" representedClassName="Clue" syncable="YES">
+        <attribute name="clueId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clueText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSolved" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="clueDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoryHistory" syncable="YES"/>
+        <relationship name="clueFromCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
+        <relationship name="questForClue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quest" inverseName="resultClue" inverseEntity="Quest" syncable="YES"/>
+    </entity>
+    <entity name="DialogueMessage" representedClassName="DialogueMessage" syncable="YES">
+        <attribute name="messageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="messageFromCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
+    </entity>
+    <entity name="LocationBasedQuest" representedClassName="LocationBasedQuest" parentEntity="Quest" syncable="YES">
+        <attribute name="direction" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="steps" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Personality" representedClassName="Personality" syncable="YES"/>
+    <entity name="Quest" representedClassName="Quest" syncable="YES">
+        <attribute name="questText" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="resultClue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clue" inverseName="questForClue" inverseEntity="Clue" syncable="YES"/>
+    </entity>
+    <entity name="Relationship" representedClassName="Relationship" syncable="YES"/>
+    <entity name="StoryHistory" representedClassName="StoryHistory" syncable="YES">
+        <attribute name="action" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="character" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="storyHistory" inverseEntity="Character" syncable="YES"/>
+    </entity>
+    <entity name="TimeBasedQuest" representedClassName="TimeBasedQuest" parentEntity="Quest" syncable="YES">
+        <attribute name="timeLimit" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Character" positionX="-252" positionY="-297" width="128" height="163"/>
+        <element name="Relationship" positionX="-432" positionY="-117" width="128" height="43"/>
+        <element name="Personality" positionX="-423" positionY="-270" width="128" height="43"/>
+        <element name="Quest" positionX="207" positionY="-63" width="128" height="73"/>
+        <element name="Clue" positionX="187" positionY="-261" width="128" height="148"/>
+        <element name="DialogueMessage" positionX="-281" positionY="-58" width="128" height="103"/>
+        <element name="LocationBasedQuest" positionX="-20" positionY="36" width="128" height="73"/>
+        <element name="TimeBasedQuest" positionX="288" positionY="86" width="128" height="58"/>
+        <element name="ActionBasedQuest" positionX="133" positionY="81" width="128" height="58"/>
+        <element name="StoryHistory" positionX="-38" positionY="-99" width="128" height="103"/>
+    </elements>
 </model>

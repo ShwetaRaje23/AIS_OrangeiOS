@@ -9,11 +9,14 @@
 #import "ONGCharacterSelectionViewController.h"
 #import "ONGCharacterTableViewCell.h"
 #import "ONGCluesViewController.h"
+#import "Character+Extended.h"
 
 
 
 @interface ONGCharacterSelectionViewController ()
-@property (nonatomic,strong) NSArray* characterDescriptions;
+@property (nonatomic,strong) NSArray* characterList;
+@property (nonatomic,strong) NSManagedObjectContext* context;
+
 @end
 
 @implementation ONGCharacterSelectionViewController
@@ -21,7 +24,7 @@
 #pragma mark TableView Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.characterDescriptions.count;
+    return self.characterList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -34,11 +37,9 @@
         //cell.textLabel.text = [NSString stringWithFormat:@"cell%li%li", (long)indexPath.section, (long)indexPath.row];
     }
     
-    
-    NSDictionary* character = [self.characterDescriptions objectAtIndex:indexPath.row];
-    
-    cell.characterLabel.text = character[@"name"];
-    cell.descriptionLabel.text = character[@"description"];
+    Character* character = [self.characterList objectAtIndex:indexPath.row];
+    cell.characterLabel.text = character.name;
+    cell.descriptionLabel.text = @"Description";
     
     return cell;
 }
@@ -59,12 +60,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.characterDescriptions = @[@{@"name":@"Maid", @"description":@"You are nosey. Have been working for 5 years. You love to gossip"},
-                                   @{@"name":@"Secratary", @"description":@"Close to the governor, more than his wife."},
-                                   @{@"name":@"Wife", @"description":@"You just love the status you have not the Governor"},
-                                   @{@"name":@"Brother", @"description":@" you are jealous of the Governor since ever "},
-                                   @{@"name":@"Uncle", @"description":@" YOu have been like a father to the governor "}];
+//    self.characterDescriptions = @[@{@"name":@"Maid", @"description":@"You are nosey. Have been working for 5 years. You love to gossip"},
+//                                   @{@"name":@"Secratary", @"description":@"Close to the governor, more than his wife."},
+//                                   @{@"name":@"Wife", @"description":@"You just love the status you have not the Governor"},
+//                                   @{@"name":@"Brother", @"description":@" you are jealous of the Governor since ever "},
+//                                   @{@"name":@"Uncle", @"description":@" YOu have been like a father to the governor "}];
     
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    
+    [super viewDidAppear:animated];
+    
+    //Get All characters from database
+    self.context = [NSManagedObjectContext MR_context];
+    self.characterList = [Character MR_findAllInContext:self.context];
+    [self.tableView reloadData];
     
 }
 

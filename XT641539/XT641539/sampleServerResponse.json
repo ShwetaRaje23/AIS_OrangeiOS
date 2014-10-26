@@ -1,0 +1,72 @@
+{
+"GameID":"XT2049",
+"characters":[
+				{
+				"name":"Maid",
+				 "characterID":"1",
+				 "role":"player"
+				},
+				{
+				"name":"Governor",
+				 "characterID":"0",
+				 "role":"victim"
+				},
+				{
+				"name":"Brother",
+				 "characterID":"2",
+				 "role":"player"
+				},
+				{
+				"name":"Uncle",
+				 "characterID":"3",
+				 "role":"player"
+				},
+				{
+				"name":"Secretary",
+				 "characterID":"4",
+				 "role":"murderer"
+				},
+				{
+				"name":"General",
+				 "characterID":"5",
+				 "role":"player"
+				},
+				{
+				"name":"Uncle",
+				 "characterID":"6",
+				 "role":"player"
+				},
+				],
+"storyHistory":[
+				{"timestamp":"Jun 2011 09:30:16 GMT",
+				 "action":"heard fight",
+				 "location":"garden",
+				 "characterID":"1"
+				},
+				{"timestamp":"Jun 2011 10:30:16 GMT",
+				 "action":"saw",
+				 "location":"Governor's room",
+				 "characterID":"1"
+				},
+				{"timestamp":"Jun 2011 11:30:16 GMT",
+				 "action":"caught",
+				 "location":"Governor's bedroom",
+				 "characterID":"1"
+				},
+				{"timestamp":"Jun 2011 11:30:16 GMT",
+				 "action":"saw",
+				 "location":"Governor's office",
+				 "characterID":"2"
+				},
+				{"timestamp":"Jun 2011 11:30:16 GMT",
+				 "action":"saw",
+				 "location":"Governor's Room",
+				 "characterID":"2"
+				},
+				{"timestamp":"Jun 2011 11:30:16 GMT",
+				 "action":"heard a conversation",
+				 "location":"Governor's Office",
+				 "characterID":"2"
+				}
+				]
+}
