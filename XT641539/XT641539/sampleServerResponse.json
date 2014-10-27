@@ -40,25 +40,25 @@
                  "clueId":"1"
 				},
 				{"timestamp":"Jun 2011 10:30:16 GMT",
-				 "action":"saw",
+				 "action":"saw something",
 				 "location":"Governor's room",
 				 "characterID":"1",
                 "clueId":"2"
 				},
 				{"timestamp":"Jun 2011 11:30:16 GMT",
-				 "action":"caught",
+				 "action":"caught in",
 				 "location":"Governor's bedroom",
 				 "characterID":"1",
                 "clueId":"3"
 				},
-				{"timestamp":"Jun 2011 11:30:16 GMT",
-				 "action":"saw",
+				{"timestamp":"Jun 2011 09:30:16 GMT",
+				 "action":"saw someone",
 				 "location":"Governor's office",
 				 "characterID":"2",
                 "clueId":"4"
 				},
-				{"timestamp":"Jun 2011 11:30:16 GMT",
-				 "action":"saw",
+				{"timestamp":"Jun 2011 10:30:16 GMT",
+				 "action":"saw someone",
 				 "location":"Governor's Room",
 				 "characterID":"2",
                 "clueId":"5"
@@ -68,6 +68,26 @@
 				 "location":"Governor's Office",
 				 "characterID":"2",
                 "clueId":"6"
+				},
+				{"timestamp":"Jun 2011 09:30:16 GMT",
+				 "action":"saw something",
+				 "location":"Governor's Office",
+				 "characterID":"3",
+                "clueId":"7"
+				},
+				{"timestamp":"Jun 2011 10:30:16 GMT",
+				 "action":"did something",
+				 "location":"Governor's Office",
+				 "characterID":"3",
+                "clueId":"8"
+				},
+				{"timestamp":"Jun 2011 11:30:16 GMT",
+				 "action":"saw blood",
+				 "location":"Governor's House",
+				 "characterID":"3",
+                "clueId":"9"
+                
 				}
+				
 				]
 }
