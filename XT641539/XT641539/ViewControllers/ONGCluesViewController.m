@@ -40,6 +40,7 @@
     //Get one quest (temporarily random)
     NSPredicate* unsolvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:NO]];
     NSArray* unsolvedQuests = [Clue MR_findAllWithPredicate:unsolvedClues inContext:context];
+//    [Clue mr_findall]
     if (unsolvedQuests.count > 0) {
             [questsAndClues insertObject:[unsolvedQuests firstObject] atIndex:0];
     }
@@ -74,14 +75,11 @@
     
 //    NSLog(@"%@",clue);
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ONGClueTableViewCell *cell = (ONGClueTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        cell.textLabel.numberOfLines = 0;
-        
+        cell = [[ONGClueTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = displayString;
+    cell.clueOrQuestTextLabel.text = displayString;
     return cell;
 }
 
@@ -91,15 +89,19 @@
         
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    Clue *clue = [self.clues objectAtIndex:indexPath.row];
-    clue.isSolved = [NSNumber numberWithBool:YES];
-    clue.clueText = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[clue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":clue.clueForCharacter.name, clue.action, clue.location, clue.timestamp];
-    [clue.managedObjectContext MR_saveToPersistentStoreAndWait];
-    [self.loggedInCharacter addCluesObject:clue];
+    if (indexPath.row == 0) {
+        
+        Clue *clue = [self.clues objectAtIndex:indexPath.row];
+        clue.isSolved = [NSNumber numberWithBool:YES];
+        clue.clueText = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[clue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":clue.clueForCharacter.name, clue.action, clue.location, [ONGUtils stringFromDate:clue.timestamp]];
+        [clue.managedObjectContext MR_saveToPersistentStoreAndWait];
+        [self.loggedInCharacter addCluesObject:clue];
+        
+        //GET MORE CLUES
+        self.clues = [self getQuestsAndCluesInContext:self.context];
+        [self.tableView reloadData];
+    }
     
-    //GET MORE CLUES
-    self.clues = [self getQuestsAndCluesInContext:self.context];
-    [self.tableView reloadData];
 }
 
 
@@ -107,6 +109,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     //CONTEXT
     self.context = [NSManagedObjectContext MR_context];
@@ -118,6 +121,9 @@
     //Logged In Character
     NSString* loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
     self.loggedInCharacter = [Character getCharacterFromId:loggedInCharacterID inContext:self.context];
+    
+    //Set Title
+//    self.title = [NSString stringWithFormat:@"Playing As: %@",self.loggedInCharacter.name];
     
     //Get Data
     self.clues = [self getQuestsAndCluesInContext:self.context];

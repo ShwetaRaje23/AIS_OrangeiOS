@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * clueId;
 @property (nonatomic, retain) NSString * clueText;
 @property (nonatomic, retain) NSNumber * isSolved;
-@property (nonatomic, retain) NSString * timestamp;
+@property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSString * action;
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) Character *clueFromCharacter;

@@ -89,7 +89,7 @@
             clue = [Clue MR_createEntityInContext:context];
             clue.isSolved = [NSNumber numberWithBool:NO];
         }
-        clue.timestamp = [historyDict valueForKey:@"timestamp"];
+        clue.timestamp = [ONGUtils dateForString:[historyDict valueForKey:@"timestamp"]];
         clue.action = [historyDict valueForKey:@"action"];
         clue.location = [historyDict valueForKey:@"location"];
         clue.clueForCharacter = character;
@@ -102,6 +102,31 @@
     }
     
     
+}
+
+#pragma mark Dialogue
+
+- (NSMutableArray*)getPossibleQuestions{
+    
+    NSMutableArray* questions = [[NSMutableArray alloc]initWithCapacity:1];
+    NSArray* allClues = [self.clues allObjects];
+    
+    
+    if (allClues.count > 0) {
+        for (int i=0; i<MIN(4, allClues.count); i++) {
+            Clue* clue = [allClues objectAtIndex:i];
+            NSString* question =[NSString stringWithFormat:@"What happened in the %@ ?",clue.location];
+            if (![questions containsObject:question]) {
+                [questions addObject:question];
+            }
+        }
+    }
+    
+    return questions;
+}
+
+- (NSMutableArray*)getPossibleResponses{
+    return nil;
 }
 
 @end

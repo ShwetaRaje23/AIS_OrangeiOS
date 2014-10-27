@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "CoreData+MagicalRecord.h"
+#define RGBCOLOR(r, g, b) [UIColor colorWithRed:r/225.0f green:g/225.0f blue:b/225.0f alpha:1]
+
 
 
 @interface AppDelegate ()
@@ -22,6 +24,8 @@
     
     
     [self setupCoreDataStack];
+    
+    [self.window setTintColor:RGBCOLOR(247.0f, 134.0f, 63.0f)];
     
     return YES;
 }

@@ -18,7 +18,7 @@
 
 //Imports
 #import "AppDelegate.h"
-
+#import "ONGUtils.h"
 
 //Defines
 #define USER_CHARACTERNAME_KEY @"name"

@@ -14,5 +14,5 @@
 
 + (Character*) getCharacterFromId:(NSString*)characterID inContext:(NSManagedObjectContext*)context;
 + (void) parseStoryData:(NSDictionary*)storyData;
-
+- (NSMutableArray*)getPossibleQuestions;
 @end

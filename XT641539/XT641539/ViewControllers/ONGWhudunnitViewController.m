@@ -7,8 +7,14 @@
 //
 
 #import "ONGWhudunnitViewController.h"
+#import "ONGCluesViewController.h"
+#import "Character+Extended.h"
+#import "ONGDialogueMessagesViewController.h"
+
 
 @interface ONGWhudunnitViewController ()
+@property (nonatomic,strong) NSArray* characterList;
+@property (nonatomic,strong) NSManagedObjectContext* context;
 
 @end
 
@@ -17,39 +23,82 @@
 #pragma mark TableView Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.characterList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    
+    static NSString *CellIdentifier = @"characterCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    Character* character = [self.characterList objectAtIndex:indexPath.row];
+    cell.textLabel.text = character.name;
+    
+    return cell;
 }
 
 #pragma mark Tableview Delegates
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    Character* character = [self.characterList objectAtIndex:indexPath.row];
+    NSString* message = [NSString stringWithFormat:@"You have accused %@ of the murder. You will be told the truth at the end of the game.", character.name];
+    [[[UIAlertView alloc]initWithTitle:@"J'accuse !" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil]show];
+    
 }
-
 
 #pragma mark Lifecycle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)viewDidAppear:(BOOL)animated{
+    
+    
+    [super viewDidAppear:animated];
+    
+    //Get characters from database
+    self.context = [NSManagedObjectContext MR_context];
+    
+    //Set Title
+    //Logged In Character
+    NSString* loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
+    Character* character = [Character getCharacterFromId:loggedInCharacterID inContext:self.context];
+//    self.title = [NSString stringWithFormat:@"Playing As: %@",character.name];
+    
+    //Logged In Character
+//    NSString* loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
+    
+    NSPredicate* notMePRedicate = [NSPredicate predicateWithFormat:@"characterID != %@",[NSNumber numberWithInteger:[loggedInCharacterID integerValue]]];
+    self.characterList = [Character MR_findAllWithPredicate:notMePRedicate inContext:self.context];
+    [self.tableView reloadData];
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    //Get Character
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    
+    
+    ONGDialogueMessagesViewController* messageVC = (ONGDialogueMessagesViewController*)[segue destinationViewController];
+    messageVC.characterToTalkTo = [self.characterList objectAtIndex:indexPath.row];
 }
-*/
-
 @end

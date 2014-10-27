@@ -21,21 +21,33 @@
 
 #pragma mark Button Action
 //Temp
-static int toCharacterResponseTag = 1;
-static int fromCharacterResponseTag = 0;
+const int toCharacterResponseTag = 1;
+const int fromCharacterResponseTag = 0;
 - (IBAction)showActionSheet:(id)sender {
     
     //Create Responses
     NSMutableArray *responses = [[NSMutableArray alloc]initWithCapacity:1];
-    int responseTag = 0;
-    
-    //Show Actionsheet
-    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Say Something" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
-    popup.tag = responseTag;
-    for (NSString* title in responses) {
-        [popup addButtonWithTitle:title];
+    int responseTag = -1;
+    if ([self isAbleToAsk]) {
+        responseTag = toCharacterResponseTag;
+    }else{
+        responseTag = fromCharacterResponseTag;
     }
-    [popup showInView:self.view];
+    responses = [self.characterToTalkTo getPossibleQuestions];
+    
+    if (responses.count > 0) {
+        //Show Actionsheet
+        UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Say Something" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
+        popup.tag = responseTag;
+        for (NSString* title in responses) {
+            [popup addButtonWithTitle:title];
+        }
+        [popup showInView:self.view];
+    }
+    else{
+        [[[UIAlertView alloc]initWithTitle:@"Oops !" message:@"This character has no clues to share with you" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil]show];
+    }
+   
 }
 
 #pragma mark Helpers
@@ -57,6 +69,14 @@ static int fromCharacterResponseTag = 0;
         }
     }
     
+}
+
+- (void) getDialogueMessages{
+    
+    //Get MEssages with characterToTalkTo
+    NSPredicate* messagesWithCharacter = [NSPredicate predicateWithFormat:@"withCharacter == %@",self.characterToTalkTo];
+    self.messages = [[NSMutableArray alloc]initWithCapacity:1];
+    [self.messages addObjectsFromArray:[DialogueMessage MR_findAllWithPredicate:messagesWithCharacter inContext:self.context]];
 }
 
 #pragma mark TableView Datasource
@@ -98,14 +118,17 @@ static int fromCharacterResponseTag = 0;
     
     self.context = [NSManagedObjectContext MR_context];
     
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     //Set Title
     self.title = self.characterToTalkTo.name;
     
-    //Get MEssages with characterToTalkTo
-    NSPredicate* messagesWithCharacter = [NSPredicate predicateWithFormat:@"withCharacter == %@",self.characterToTalkTo];
-    self.messages = [[NSMutableArray alloc]initWithCapacity:1];
-    [self.messages addObjectsFromArray:[DialogueMessage MR_findAllWithPredicate:messagesWithCharacter inContext:self.context]];
+    //Set Logged in user
+    NSString* loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
+    self.loggedInCharacter = [Character getCharacterFromId:loggedInCharacterID inContext:self.context];
     
+    //Get Old messages
+    [self getDialogueMessages];
     [self.tableView reloadData];
 }
 
@@ -126,31 +149,35 @@ static int fromCharacterResponseTag = 0;
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     switch (popup.tag) {
-        case 1: {
+        case toCharacterResponseTag: {
+            
             switch (buttonIndex) {
                 case 0:
-//                    [self FBShare];
-                    break;
-                case 1:
-//                    [self TwitterShare];
-                    break;
-                case 2:
-//                    [self emailContent];
-                    break;
-                case 3:
-//                    [self saveContent];
-                    break;
-                case 4:
-//                    [self rateAppYes];
+                    //Cancel
                     break;
                 default:
+                {
+                    //Create a message dialogue
+                    DialogueMessage* newMessage = [DialogueMessage MR_createEntityInContext:self.characterToTalkTo.managedObjectContext];
+                    newMessage.messageId = [NSString stringWithFormat:@"%ld",random()];
+                    newMessage.messageText = [popup buttonTitleAtIndex:buttonIndex];
+                    newMessage.timestamp = [NSDate date];
+                    newMessage.recievedFromCharacter = [NSNumber numberWithBool:NO];
+                    newMessage.clueId = nil;
+                    newMessage.withCharacter = self.characterToTalkTo;
+                    [self.characterToTalkTo.managedObjectContext MR_saveToPersistentStoreAndWait];
+                }
                     break;
             }
+            
+            }
             break;
-        }
         default:
             break;
     }
+    
+    [self getDialogueMessages];
+    [self.tableView reloadData];
 }
 
 @end

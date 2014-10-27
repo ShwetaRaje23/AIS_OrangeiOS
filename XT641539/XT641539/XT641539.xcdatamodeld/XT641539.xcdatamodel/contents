@@ -18,7 +18,7 @@
         <attribute name="clueText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isSolved" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="clueForCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="clues" inverseEntity="Character" syncable="YES"/>
         <relationship name="clueFromCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
         <relationship name="questForClue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quest" inverseName="resultClue" inverseEntity="Quest" syncable="YES"/>
@@ -28,7 +28,7 @@
         <attribute name="messageId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recievedFromCharacter" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="withCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
     </entity>
     <entity name="LocationBasedQuest" representedClassName="LocationBasedQuest" parentEntity="Quest" syncable="YES">

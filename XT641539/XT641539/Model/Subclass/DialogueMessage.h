@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * messageId;
 @property (nonatomic, retain) NSString * messageText;
-@property (nonatomic, retain) NSString * timestamp;
+@property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSNumber * recievedFromCharacter;
 @property (nonatomic, retain) NSString * clueId;
 @property (nonatomic, retain) Character *withCharacter;

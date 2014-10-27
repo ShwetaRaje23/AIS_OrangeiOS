@@ -12,4 +12,5 @@
 @interface ONGDialogueMessagesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) Character* characterToTalkTo;
+@property (nonatomic,strong) Character* loggedInCharacter;
 @end

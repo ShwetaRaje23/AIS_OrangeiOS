@@ -33,37 +33,37 @@
 				}
 				],
 "storyHistory":[
-				{"timestamp":"Jun 2011 09:30:16 GMT",
+				{"timestamp":"09:30:16 pm",
 				 "action":"heard fight",
 				 "location":"garden",
 				 "characterID":"1",
                  "clueId":"1"
 				},
-				{"timestamp":"Jun 2011 10:30:16 GMT",
+				{"timestamp":"10:30:16 pm",
 				 "action":"saw",
 				 "location":"Governor's room",
 				 "characterID":"1",
                 "clueId":"2"
 				},
-				{"timestamp":"Jun 2011 11:30:16 GMT",
+				{"timestamp":"11:30:16 pm",
 				 "action":"caught",
 				 "location":"Governor's bedroom",
 				 "characterID":"1",
                 "clueId":"3"
 				},
-				{"timestamp":"Jun 2011 11:30:16 GMT",
+				{"timestamp":"11:30:16 pm",
 				 "action":"saw",
 				 "location":"Governor's office",
 				 "characterID":"2",
                 "clueId":"4"
 				},
-				{"timestamp":"Jun 2011 11:30:16 GMT",
+				{"timestamp":"11:30:16 pm",
 				 "action":"saw",
 				 "location":"Governor's Room",
 				 "characterID":"2",
                 "clueId":"5"
 				},
-				{"timestamp":"Jun 2011 11:30:16 GMT",
+				{"timestamp":"11:30:16 pm",
 				 "action":"heard a conversation",
 				 "location":"Governor's Office",
 				 "characterID":"2",
