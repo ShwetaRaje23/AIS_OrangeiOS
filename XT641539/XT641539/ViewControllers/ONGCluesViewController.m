@@ -100,7 +100,7 @@
     
     switch (section) {
         case 0:
-            return 1;
+            return self.unsolvedclues.count>0?1:0;
         default:{
             return self.solvedclues.count;
         }
