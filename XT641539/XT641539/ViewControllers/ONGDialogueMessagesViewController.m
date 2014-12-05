@@ -87,7 +87,7 @@ const int fromCharacterResponseTag = 0;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"themCell";
+    NSString *CellIdentifier = @"themCell";
     
     DialogueMessage* message = [self.messages objectAtIndex:indexPath.row];
     if ([message.recievedFromCharacter isEqualToNumber:[NSNumber numberWithBool:NO]]) {
@@ -127,16 +127,16 @@ const int fromCharacterResponseTag = 0;
     NSString* loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
     self.loggedInCharacter = [Character getCharacterFromId:loggedInCharacterID inContext:self.context];
     
-    //Get Old messages
-    [self getDialogueMessages];
-    [self.tableView reloadData];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
     
-    
+    //Get Old messages
+    [self getDialogueMessages];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -165,6 +165,16 @@ const int fromCharacterResponseTag = 0;
                     newMessage.recievedFromCharacter = [NSNumber numberWithBool:NO];
                     newMessage.clueId = nil;
                     newMessage.withCharacter = self.characterToTalkTo;
+                    [self.characterToTalkTo.managedObjectContext MR_saveToPersistentStoreAndWait];
+                    
+                    //Create a response
+                    DialogueMessage* newMessage2 = [DialogueMessage MR_createEntityInContext:self.characterToTalkTo.managedObjectContext];
+                    newMessage2.messageId = [NSString stringWithFormat:@"%ld",random()];
+                    newMessage2.messageText = @"Some response text";
+                    newMessage2.timestamp = [NSDate date];
+                    newMessage2.recievedFromCharacter = [NSNumber numberWithBool:YES];
+                    newMessage2.clueId = nil;
+                    newMessage2.withCharacter = self.characterToTalkTo;
                     [self.characterToTalkTo.managedObjectContext MR_saveToPersistentStoreAndWait];
                 }
                     break;

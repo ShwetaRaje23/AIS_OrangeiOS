@@ -37,6 +37,7 @@
     
     Character* character = [self.characterList objectAtIndex:indexPath.row];
     cell.textLabel.text = character.name;
+    cell.textLabel.font = [UIFont fontWithName:@"Futura-Medium" size:14];
     
     return cell;
 }
