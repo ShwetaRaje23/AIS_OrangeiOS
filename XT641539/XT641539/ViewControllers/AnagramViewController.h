@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TileView.h"
+#import "Clue.h"
+#import "Clue+Extended.h"
 
 @interface AnagramViewController : UIViewController <TileDragDelegateProtocol>
 
-
+@property (strong, nonatomic) Clue *clueToShow;
 
 @end

@@ -6,12 +6,14 @@
 //  Copyright (c) 2014 Orange. All rights reserved.
 //
 
+#import "AnagramViewController.h"
 #import "ONGCluesViewController.h"
 
 @interface ONGCluesViewController ()
 @property (nonatomic,strong) NSMutableArray* clues;
 @property (nonatomic,strong) NSManagedObjectContext* context;
 @property (nonatomic,strong) Character* loggedInCharacter;
+//@property (nonatomic, strong) Clue* clueToPass;
 //@property (nonatomic, strong) BOOL shouldGenerate;
 @end
 
@@ -35,7 +37,7 @@
     NSPredicate* solvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:YES]];
     [questsAndClues addObjectsFromArray:[[self.loggedInCharacter.clues filteredSetUsingPredicate:solvedClues] allObjects]];
     
-//    Get ONLY Your Own Quests first !!!
+    //    Get ONLY Your Own Quests first !!!
     NSPredicate* unsolvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:NO]];
     NSPredicate* clueForUser = [NSPredicate predicateWithFormat:@"clueForCharacter == %@",self.loggedInCharacter];
     NSCompoundPredicate* compoundPredicateForClues = [NSCompoundPredicate andPredicateWithSubpredicates:@[unsolvedClues, clueForUser]];
@@ -106,7 +108,7 @@
     }
     
     
-//    NSLog(@"%@",clue);
+    //    NSLog(@"%@",clue);
     
     ONGClueTableViewCell *cell = (ONGClueTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -119,20 +121,26 @@
 #pragma mark Tableview Delegates
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-        
-    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if (indexPath.row != 0) {
+    
+    
+    NSLog(@"Clicking on this row!!! %ld", (long)indexPath.row);
+    
+    Clue *clue = [self.clues objectAtIndex:indexPath.row];
+    clue.isSolved = [NSNumber numberWithBool:YES];
+    
+    clue.clueText = @"Solve this anagram for a clue";
+    //    self.clueToPass = clue;
+    
+    if (indexPath.row == 0) {
         
-        NSLog(@"Clicking on this row!!!");
         
-        Clue *clue = [self.clues objectAtIndex:indexPath.row];
-        clue.isSolved = [NSNumber numberWithBool:YES];
         
-        clue.clueText = @"Solve this anagram for a clue";
         
-//        clue.clueText = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[clue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":clue.clueForCharacter.name, clue.action, clue.location, [ONGUtils stringFromDate:clue.timestamp]];
-        
+        //        AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        //
+        //        appDel.clueIdForDetailPane = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+        //        appDel.clueNameForDetailPane = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[clue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":clue.clueForCharacter.name, clue.action, clue.location, [ONGUtils stringFromDate:clue.timestamp]];
         
         [clue.managedObjectContext MR_saveToPersistentStoreAndWait];
         [self.loggedInCharacter addCluesObject:clue];
@@ -140,8 +148,19 @@
         //GET MORE CLUES
         self.clues = [self getQuestsAndCluesInContext:self.context];
         [self.tableView reloadData];
+        
+        
+        
+        
     }
     
+    else {
+        
+        //        AnagramViewController *detailViewController = [[AnagramViewController alloc]init];
+        //        detailViewController.clueToShow = [self.clues objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"showQuest" sender:clue];
+    }
+    //    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 
@@ -163,11 +182,7 @@
     self.loggedInCharacter = [Character getCharacterFromId:loggedInCharacterID inContext:self.context];
     
     //Set Title
-    self.title = [NSString stringWithFormat:@"Clues",self.loggedInCharacter.name];
-    
-    //Get Data
-    self.clues = [self getQuestsAndCluesInContext:self.context];
-    [self.tableView reloadData];
+    //    self.title = [NSString stringWithFormat:@"Clues",self.loggedInCharacter.name];
     
 }
 
@@ -176,8 +191,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //Get Data
+    self.clues = [self getQuestsAndCluesInContext:self.context];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 }
+
+
+#pragma mark Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    AnagramViewController *detailViewController = (AnagramViewController*)[segue destinationViewController];
+    detailViewController.clueToShow = sender;
+    //    [self.navigationController pushViewController:detailController animated:YES];
+    
+}
+
 
 @end

@@ -11,6 +11,8 @@
 #import "TargetView.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+#import "Character+Extended.h"
+
 
 #define kTileMargin 20
 
@@ -19,6 +21,9 @@
 @interface AnagramViewController ()
 
 @property (strong, nonatomic) NSMutableArray* myLetterOptions;
+
+@property (nonatomic,strong) NSManagedObjectContext* context;
+@property (nonatomic,strong) Character* loggedInCharacter;
 
 @end
 
@@ -33,9 +38,13 @@
     
     // Do any additional setup after loading the view.
     [self setupGameView];
-
+    
     [self dealRandomAnagrams];
-
+    
+    self.context = [NSManagedObjectContext MR_context];
+    NSString* loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
+    self.loggedInCharacter = [Character getCharacterFromId:loggedInCharacterID inContext:self.context];
+    
     
 }
 
@@ -50,7 +59,7 @@
     
     [self.view addSubview: gameLayer];
     
-//    self.controller.gameView = gameLayer;
+    //    self.controller.gameView = gameLayer;
 }
 
 - (void) dealRandomAnagrams {
@@ -100,12 +109,7 @@
         }
     }
     
-//    UILabel *solveLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, kScreenHeight/2, 150.0, 43.0) ];
-//    solveLabel.center = CGPointMake(10, kScreenHeight/2);
-//    solveLabel.text = @"Solve this anagram for a clue";
-//    [self.view addSubview:solveLabel];
     
-    // initialize target list
     _targets = [NSMutableArray arrayWithCapacity: ansAnaLength];
     
     // create targets
@@ -158,12 +162,19 @@
 
 -(void)checkForSuccess
 {
-    for (TargetView* t in _targets) {
-        //no success, bail out
-        if (t.isMatched==NO) return;
-    }
+    //    for (TargetView* t in _targets) {
+    //        //no success, bail out
+    //        if (t.isMatched==NO) return;
+    //    }
     
-    NSLog(@"Game Over!");
+    _clueToShow.clueText = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[_clueToShow.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":_clueToShow.clueForCharacter.name, _clueToShow.action, _clueToShow.location, [ONGUtils stringFromDate:_clueToShow.timestamp]];
+    _clueToShow.isSolved = [NSNumber numberWithBool:YES];
+    
+    [_clueToShow.managedObjectContext MR_saveToPersistentStoreAndWait];
+    
+    NSLog(@"Game Over");
+    NSLog(@"Clue to show %@", _clueToShow);
+    
 }
 
 -(void)placeTile:(TileView*)tileView atTarget:(TargetView*)targetView
@@ -189,7 +200,6 @@
                          targetView.hidden = YES;
                      }];
 }
-
 
 #pragma mark Audio Stuff
 

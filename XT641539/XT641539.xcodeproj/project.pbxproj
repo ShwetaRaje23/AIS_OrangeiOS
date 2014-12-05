@@ -73,6 +73,7 @@
 		D90431621A313BD500D9E398 /* tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D904315E1A313BD500D9E398 /* tile@2x.png */; };
 		D90431651A31416100D9E398 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90431641A31416100D9E398 /* TargetView.m */; };
 		D904316F1A31479300D9E398 /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = D90431671A31479300D9E398 /* particle.png */; };
+		D9BBC3141A319030002566DD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BBC3131A319030002566DD /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,8 @@
 		D90431631A31416100D9E398 /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetView.h; path = ViewControllers/TargetView.h; sourceTree = "<group>"; };
 		D90431641A31416100D9E398 /* TargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetView.m; path = ViewControllers/TargetView.m; sourceTree = "<group>"; };
 		D90431671A31479300D9E398 /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
+		D9BBC3121A319030002566DD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		D9BBC3131A319030002566DD /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +258,7 @@
 		C12D0EEB19F6D4AA00EA2B26 /* XT641539 */ = {
 			isa = PBXGroup;
 			children = (
+				D9BBC3111A319030002566DD /* Utils */,
 				D904315A1A313BD500D9E398 /* Images */,
 				C89A2E0819FC550100650370 /* lib */,
 				C12D0F1A19F6D53E00EA2B26 /* Assets */,
@@ -570,6 +574,15 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		D9BBC3111A319030002566DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D9BBC3121A319030002566DD /* Utils.h */,
+				D9BBC3131A319030002566DD /* Utils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -696,6 +709,7 @@
 				C89A302E19FC56BA00650370 /* MagicalRecord.m in Sources */,
 				3125C20019FDD16F00576334 /* DialogueMessage.m in Sources */,
 				3125C20319FDD16F00576334 /* Quest.m in Sources */,
+				D9BBC3141A319030002566DD /* Utils.m in Sources */,
 				C12D0F1F19F6D61B00EA2B26 /* ONGHomeViewController.m in Sources */,
 				C89A302619FC56BA00650370 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				3125C1D019FD89C500576334 /* ONGDialogueMEssageTableViewCell.m in Sources */,
