@@ -74,6 +74,7 @@
 		D90431651A31416100D9E398 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90431641A31416100D9E398 /* TargetView.m */; };
 		D904316F1A31479300D9E398 /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = D90431671A31479300D9E398 /* particle.png */; };
 		D9BBC3141A319030002566DD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BBC3131A319030002566DD /* Utils.m */; };
+		D9BBC3171A319645002566DD /* ExplodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BBC3161A319645002566DD /* ExplodeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +218,8 @@
 		D90431671A31479300D9E398 /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
 		D9BBC3121A319030002566DD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D9BBC3131A319030002566DD /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D9BBC3151A319645002566DD /* ExplodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplodeView.h; path = ViewControllers/ExplodeView.h; sourceTree = "<group>"; };
+		D9BBC3161A319645002566DD /* ExplodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExplodeView.m; path = ViewControllers/ExplodeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +373,8 @@
 				D90431581A313AF900D9E398 /* TileView.m */,
 				D90431631A31416100D9E398 /* TargetView.h */,
 				D90431641A31416100D9E398 /* TargetView.m */,
+				D9BBC3151A319645002566DD /* ExplodeView.h */,
+				D9BBC3161A319645002566DD /* ExplodeView.m */,
 			);
 			name = "Clues Tab";
 			sourceTree = "<group>";
@@ -697,6 +702,7 @@
 				C89A301819FC56BA00650370 /* NSNumber+MagicalDataImport.m in Sources */,
 				C89A302219FC56BA00650370 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				C89A302419FC56BA00650370 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				D9BBC3171A319645002566DD /* ExplodeView.m in Sources */,
 				C12D0F2319F6DAD200EA2B26 /* ONGCluesViewController.m in Sources */,
 				D90431491A3119E100D9E398 /* AnagramViewController.m in Sources */,
 				C12D0EF519F6D4AA00EA2B26 /* XT641539.xcdatamodeld in Sources */,

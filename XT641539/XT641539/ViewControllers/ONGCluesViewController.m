@@ -127,6 +127,7 @@
     NSLog(@"Clicking on this row!!! %ld", (long)indexPath.row);
     
     Clue *clue = [self.clues objectAtIndex:indexPath.row];
+            NSLog(@"Hellu :: %@", clue);
     clue.isSolved = [NSNumber numberWithBool:YES];
     
     clue.clueText = @"Solve this anagram for a clue";
@@ -159,6 +160,8 @@
         //        AnagramViewController *detailViewController = [[AnagramViewController alloc]init];
         //        detailViewController.clueToShow = [self.clues objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"showQuest" sender:clue];
+        
+
     }
     //    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }

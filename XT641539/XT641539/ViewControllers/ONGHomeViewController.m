@@ -63,7 +63,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSDictionary *trialData = [Utils sendSynchronousRequestOfType:@"POST" toUrlWithString:@"http://orange-server.herokuapp.com/tellMeAStory/" withData:nil];
+    NSDictionary *trialData = [Utils sendSynchronousRequestOfType:@"GET" toUrlWithString:@"http://orange-server.herokuapp.com/tellMeAStory/" withData:nil];
     
     NSLog(@"trialData ::: %@", trialData);
     

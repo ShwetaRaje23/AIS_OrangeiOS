@@ -47,13 +47,13 @@
                                                       error:&error];
     
     if (error == nil) {
-        //        NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+                NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         NSDictionary* responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSLog(@"Response Dictionary = %@",responseDict);
         return responseDict;
     }
     else {
-        //        NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+                NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         NSLog(@"%@", [error userInfo]);
         return @{@"error":[error userInfo]};
     }
