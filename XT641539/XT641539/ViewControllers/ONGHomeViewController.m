@@ -69,8 +69,16 @@
     
     [super viewDidAppear:animated];
     
-    NSDictionary* jsonData = [Utils parseStoryJSON];
-    [Character parseStoryData:jsonData];
+    NSDictionary* characters = [Utils getCharactersFromResponseDictionary];
+    NSDictionary* histories = [Utils getHistoryFromResponseDictionary];
+
+    for (NSDictionary* character in characters) {
+        [Character parseStoryData:character];
+    }
+    
+    for (NSDictionary* history in histories) {
+        [Character parseStoryHistory:history];
+    }
     
 }
 

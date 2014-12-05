@@ -4,6 +4,7 @@
         <attribute name="anagramOfString" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Character" representedClassName="Character" syncable="YES">
+        <attribute name="characterDesc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="characterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -46,7 +47,7 @@
     </entity>
     <elements>
         <element name="ActionBasedQuest" positionX="-90" positionY="108" width="128" height="58"/>
-        <element name="Character" positionX="-234" positionY="-270" width="128" height="148"/>
+        <element name="Character" positionX="-234" positionY="-270" width="128" height="163"/>
         <element name="Clue" positionX="-47" positionY="-270" width="128" height="180"/>
         <element name="DialogueMessage" positionX="-281" positionY="-58" width="128" height="133"/>
         <element name="LocationBasedQuest" positionX="-128" positionY="-9" width="128" height="73"/>

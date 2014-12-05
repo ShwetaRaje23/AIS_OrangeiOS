@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSNumber * characterID;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDecimalNumber * role;
+@property (nonatomic, retain) NSString * characterDesc;
 @property (nonatomic, retain) NSSet *clues;
 @property (nonatomic, retain) NSSet *dialogueMessages;
 @property (nonatomic, retain) Personality *personality;

@@ -50,16 +50,22 @@
 + (void) parseStoryCharacter:(NSDictionary *)characterDict{
     
     NSManagedObjectContext* context = [NSManagedObjectContext MR_context];
-    Character* character = [self getCharacterFromId:[characterDict valueForKey:@"characterID"] inContext:context];
+    Character* character = [self getCharacterFromId:[characterDict valueForKey:@"characterid"] inContext:context];
     
     if (!character) {
         character = [Character MR_createEntityInContext:context];
         character.name = [characterDict valueForKey:@"name"];
-        character.characterID = [NSNumber numberWithInteger:[[characterDict valueForKey:@"characterID"] integerValue]];
+        character.characterID = [NSNumber numberWithInteger:[[characterDict valueForKey:@"characterid"] integerValue]];
+        character.characterDesc = [characterDict valueForKey:@"characterDescription"];
+        
+        NSLog(@"Description :::::: %@", character.characterDesc);
+        
 //        character.role = [characterDict valueForKey:@"role"]; //Decimal From Enum
         
         [context MR_saveToPersistentStoreAndWait];
-    }else{
+    }
+    
+    else{
         
         //Update
     }

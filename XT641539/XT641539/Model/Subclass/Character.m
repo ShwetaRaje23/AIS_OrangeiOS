@@ -18,6 +18,7 @@
 @dynamic characterID;
 @dynamic name;
 @dynamic role;
+@dynamic characterDesc;
 @dynamic clues;
 @dynamic dialogueMessages;
 @dynamic personality;
