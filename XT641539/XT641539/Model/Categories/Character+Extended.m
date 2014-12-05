@@ -76,7 +76,10 @@
     if (!character) {
         //ERROR !
         NSLog(@"No character for history");
+        
+        
     }else{
+        
         //Create history
 //        history = [StoryHistory MR_createEntityInContext:context];
 //        history.timestamp = [historyDict valueForKey:@"timestamp"];
@@ -85,14 +88,17 @@
 //        history.character = character;
 
         clue = [Clue getClueFromId:[historyDict valueForKey:@"clueId"] inContext:context];
+        
         if (!clue) {
             clue = [Clue MR_createEntityInContext:context];
             clue.isSolved = [NSNumber numberWithBool:NO];
         }
+        
         clue.timestamp = [ONGUtils dateForString:[historyDict valueForKey:@"timestamp"]];
         clue.action = [historyDict valueForKey:@"action"];
         clue.location = [historyDict valueForKey:@"location"];
         clue.clueForCharacter = character;
+        clue.clueId = [historyDict valueForKey:@"clueId"];
         
         //Create Quest and Clues
         Quest* quest = [Quest createQuestUsingClue:clue inContext:context];

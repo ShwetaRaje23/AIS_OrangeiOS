@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cuB-ug-JfI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cuB-ug-JfI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClI-Hg-yI4">
-                                <rect key="frame" x="0.0" y="206" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="154" width="320" height="306"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="411-bd-Dh7"/>
                                 </constraints>
@@ -31,7 +32,6 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ORANGE YOU DEAD ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNg-rm-DMM">
                                 <rect key="frame" x="20" y="73" width="280" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="30"/>
                                 <color key="textColor" red="0.967741935483871" green="0.5258631552419355" blue="0.24705883860588074" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -63,7 +63,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-sf-Pca">
                                 <rect key="frame" x="0.0" y="61" width="320" height="419"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.97254908080000002" green="0.45490199329999997" blue="0.2470588386" alpha="0.46999999999999997" colorSpace="deviceRGB"/>
                                 <prototypes>
@@ -76,13 +75,11 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Tq-2sk">
                                                     <rect key="frame" x="20" y="0.0" width="86" height="72"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-fd-A5z">
                                                     <rect key="frame" x="114" y="0.0" width="186" height="72"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
@@ -102,7 +99,6 @@
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play As:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-fC-eKz">
                                 <rect key="frame" x="15" y="32" width="181" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -118,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="237" y="906"/>
         </scene>
-        <!--Dialogue View Controller - Talk to:-->
+        <!--Talk to:-->
         <scene sceneID="Vom-1h-Kjo">
             <objects>
                 <viewController storyboardIdentifier="ONGDialogueViewController" id="3f0-CF-ySl" customClass="ONGDialogueViewController" sceneMemberID="viewController">
@@ -178,7 +174,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Fnt-Qh-hLq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="393"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="themCell" id="GkO-hs-eW4" customClass="ONGDialogueMEssageTableViewCell">
@@ -190,11 +185,9 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="themDialogue" translatesAutoresizingMaskIntoConstraints="NO" id="QG8-Rp-cXz">
                                                     <rect key="frame" x="0.0" y="2" width="253" height="41"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Them" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="nJh-TK-ieP">
                                                     <rect key="frame" x="34" y="2" width="214" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -214,11 +207,9 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="usDialogue" translatesAutoresizingMaskIntoConstraints="NO" id="6er-JW-PoQ">
                                                     <rect key="frame" x="58" y="2" width="262" height="41"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Us" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="226" translatesAutoresizingMaskIntoConstraints="NO" id="89D-vU-Hcl">
                                                     <rect key="frame" x="65" y="1" width="226" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -237,7 +228,6 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPX-au-abF">
                                 <rect key="frame" x="20" y="401" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Say Something">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -257,7 +247,7 @@
             </objects>
             <point key="canvasLocation" x="2929" y="119"/>
         </scene>
-        <!--Whudunnit View Controller-->
+        <!--Whodunnit-->
         <scene sceneID="Thw-NP-p1X">
             <objects>
                 <viewController storyboardIdentifier="ONGWhudunnitViewController" id="off-vv-adA" customClass="ONGWhudunnitViewController" sceneMemberID="viewController">
@@ -271,7 +261,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-0d-opU">
                                 <rect key="frame" x="0.0" y="8" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.97254908080000002" green="0.45490199329999997" blue="0.2470588386" alpha="0.46999999999999997" colorSpace="deviceRGB"/>
                                 <prototypes>
@@ -292,7 +281,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bTt-0L-Hzn"/>
+                    <navigationItem key="navigationItem" title="Whodunnit" id="bTt-0L-Hzn">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Afo-4g-uVy">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rkU-x2-3oF">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doLogout:" destination="off-vv-adA" eventType="touchUpInside" id="JyV-mR-dP9"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OOi-0d-opU" id="FdL-wC-NKK"/>
                     </connections>
@@ -328,7 +330,6 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="nsc-52-B0S">
                                                     <rect key="frame" x="20" y="0.0" width="280" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -348,7 +349,6 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Bq5-tz-4gS">
                                                     <rect key="frame" x="20" y="0.0" width="280" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -378,10 +378,10 @@
             </objects>
             <point key="canvasLocation" x="2233" y="1626"/>
         </scene>
-        <!--View Controller-->
+        <!--Get a clue!-->
         <scene sceneID="gZR-K7-jlK">
             <objects>
-                <viewController id="3nk-CJ-S4k" sceneMemberID="viewController">
+                <viewController id="3nk-CJ-S4k" customClass="AnagramViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tDN-BC-27R"/>
                         <viewControllerLayoutGuide type="bottom" id="t5J-Aa-CGH"/>
@@ -389,9 +389,17 @@
                     <view key="view" contentMode="scaleToFill" id="aEh-Fl-BGD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Solve the anagram for the clue..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm5-E5-qip">
+                                <rect key="frame" x="16" y="72" width="249" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9H8-j0-DN5"/>
+                    <navigationItem key="navigationItem" title="Get a clue!" id="9H8-j0-DN5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0T-pF-FfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -417,7 +425,7 @@
             </objects>
             <point key="canvasLocation" x="770" y="920"/>
         </scene>
-        <!--Navigation Controller - Dialogue-->
+        <!--Dialogue-->
         <scene sceneID="Nia-eL-0jX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2EK-40-mvt" sceneMemberID="viewController">
@@ -436,7 +444,7 @@
             </objects>
             <point key="canvasLocation" x="1415" y="119"/>
         </scene>
-        <!--Navigation Controller - Whodunnit-->
+        <!--Whodunnit-->
         <scene sceneID="lDZ-aL-Hn4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d2k-3q-axL" sceneMemberID="viewController">
@@ -455,11 +463,11 @@
             </objects>
             <point key="canvasLocation" x="1415" y="878"/>
         </scene>
-        <!--Navigation Controller - Clues-->
+        <!--Navigation Controller-->
         <scene sceneID="AuJ-5r-xbe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EE9-eu-l7m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Clues" id="Bll-jv-ZbO"/>
+                    <tabBarItem key="tabBarItem" title="" image="clueTab" id="Bll-jv-ZbO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oa5-Z3-aG3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -476,6 +484,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clueTab" width="40" height="40"/>
         <image name="orangeSplat" width="618" height="454"/>
         <image name="themDialogue" width="633" height="108"/>
         <image name="usDialogue" width="633" height="108"/>

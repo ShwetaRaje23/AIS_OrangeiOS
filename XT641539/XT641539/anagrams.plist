@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>anagrams</key>
+	<array>
+		<array>
+			<string>kenif</string>
+			<string>knife</string>
+		</array>
+		<array>
+			<string>trail</string>
+			<string>trial</string>
+		</array>
+		<array>
+			<string>hated</string>
+			<string>death</string>
+		</array>
+		<array>
+			<string>elvis</string>
+			<string>lives</string>
+		</array>
+		<array>
+			<string>micer</string>
+			<string>crime</string>
+		</array>
+		<array>
+			<string>gnash</string>
+			<string>hangs</string>
+		</array>
+		<array>
+			<string>aseer</string>
+			<string>erase</string>
+		</array>
+		<array>
+			<string>skill</string>
+			<string>kills</string>
+		</array>
+		<array>
+			<string>slyas</string>
+			<string>slays</string>
+		</array>
+		<array>
+			<string>sweat</string>
+			<string>waste</string>
+		</array>
+		<array>
+			<string>tonix</string>
+			<string>toxin</string>
+		</array>
+	</array>
+	<key>timeToSolve</key>
+	<integer>600</integer>
+	<key>pointsPerTile</key>
+	<integer>10</integer>
+</dict>
+</plist>

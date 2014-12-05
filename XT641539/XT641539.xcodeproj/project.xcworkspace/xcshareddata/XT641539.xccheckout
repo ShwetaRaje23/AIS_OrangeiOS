@@ -10,43 +10,31 @@
 	<string>XT641539</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>89B28212-BA63-461E-A1C9-E7234D70B828</key>
-		<string>https://github.com/magicalpanda/MagicalRecord.git</string>
-		<key>AAC68D81-0537-4321-BE96-7444E954556B</key>
-		<string>https://github.gatech.edu/ssalunke3/Orange-iOS.git</string>
+		<key>2CF003A5870D6A40FD55C03B20F9BB877373E950</key>
+		<string>https://github.gatech.edu/SashaZd/GaTech.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>XT641539/XT641539.xcodeproj/project.xcworkspace</string>
+	<string>AIS - 7634/Project Stuff/Project/Orange-iOS-master/XT641539/XT641539.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>89B28212-BA63-461E-A1C9-E7234D70B828</key>
-		<string>../../XT641539/lib/MagicalRecord</string>
-		<key>AAC68D81-0537-4321-BE96-7444E954556B</key>
-		<string>../../..</string>
+		<key>2CF003A5870D6A40FD55C03B20F9BB877373E950</key>
+		<string>../../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.gatech.edu/ssalunke3/Orange-iOS.git</string>
+	<string>https://github.gatech.edu/SashaZd/GaTech.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AAC68D81-0537-4321-BE96-7444E954556B</string>
+	<string>2CF003A5870D6A40FD55C03B20F9BB877373E950</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>89B28212-BA63-461E-A1C9-E7234D70B828</string>
+			<string>2CF003A5870D6A40FD55C03B20F9BB877373E950</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MagicalRecord</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>AAC68D81-0537-4321-BE96-7444E954556B</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Orange-iOS</string>
+			<string>GaTech</string>
 		</dict>
 	</array>
 </dict>

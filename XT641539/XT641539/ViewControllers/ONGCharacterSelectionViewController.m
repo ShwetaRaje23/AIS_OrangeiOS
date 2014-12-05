@@ -74,7 +74,6 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     
-    
     [super viewDidAppear:animated];
     
     //Get All characters from database

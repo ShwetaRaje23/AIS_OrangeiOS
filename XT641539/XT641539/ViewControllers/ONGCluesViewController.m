@@ -12,6 +12,7 @@
 @property (nonatomic,strong) NSMutableArray* clues;
 @property (nonatomic,strong) NSManagedObjectContext* context;
 @property (nonatomic,strong) Character* loggedInCharacter;
+//@property (nonatomic, strong) BOOL shouldGenerate;
 @end
 
 @implementation ONGCluesViewController
@@ -30,22 +31,54 @@
     [questsAndClues insertObject:defaultClue atIndex:0];
     
     
-    
-    
     //Get all solved Clues
     NSPredicate* solvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:YES]];
     [questsAndClues addObjectsFromArray:[[self.loggedInCharacter.clues filteredSetUsingPredicate:solvedClues] allObjects]];
-//    [questsAndClues addObjectsFromArray:[Clue MR_findAllWithPredicate:solvedClues inContext:context]];
     
-    //Get one quest (temporarily random)
+//    Get ONLY Your Own Quests first !!!
     NSPredicate* unsolvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:NO]];
-    NSArray* unsolvedQuests = [Clue MR_findAllWithPredicate:unsolvedClues inContext:context];
-//    [Clue mr_findall]
-    if (unsolvedQuests.count > 0) {
-            [questsAndClues insertObject:[unsolvedQuests firstObject] atIndex:0];
-    }
+    NSPredicate* clueForUser = [NSPredicate predicateWithFormat:@"clueForCharacter == %@",self.loggedInCharacter];
+    NSCompoundPredicate* compoundPredicateForClues = [NSCompoundPredicate andPredicateWithSubpredicates:@[unsolvedClues, clueForUser]];
     
-//    [questsAndClues addObjectsFromArray:[Clue MR_findAllWithPredicate:unsolvedClues inContext:self.context]];
+    NSPredicate* clueForOthers = [NSPredicate predicateWithFormat:@"clueForCharacter != %@", self.loggedInCharacter];
+    
+    NSArray* unsolvedQuests = [Clue MR_findAllWithPredicate:compoundPredicateForClues inContext:context];
+    
+    if (unsolvedQuests.count > 0) {
+        BOOL addFlag = false;
+        for (Clue *unsolved in unsolvedQuests) {
+            for (Clue *check in questsAndClues) {
+                if (unsolved.clueText == check.clueText && unsolved.clueForCharacter == check.clueForCharacter && unsolved.clueId == check.clueId) {
+                    NSLog(@"Already exists in the array!!!!!!!!");
+                    addFlag = true;
+                    break;
+                }
+            }
+        }
+        if (!addFlag) {
+            [questsAndClues insertObject:[unsolvedQuests firstObject] atIndex:0];
+        }
+    }
+    else {
+        NSArray* othersQuests = [Clue MR_findAllWithPredicate:clueForOthers inContext:context];
+        
+        if (othersQuests.count > 0) {
+            BOOL addFlag = false;
+            
+            for (Clue *unsolved in othersQuests) {
+                for (Clue *check in questsAndClues) {
+                    if (unsolved.clueText == check.clueText && unsolved.clueForCharacter == check.clueForCharacter && unsolved.clueId == check.clueId && unsolved.clueText != nil){
+                        NSLog(@"Already exists in the array!!!!!!!!");
+                        addFlag = true;
+                        break;
+                    }
+                }
+            }
+            if (!addFlag) {
+                [questsAndClues insertObject:[othersQuests firstObject] atIndex:0];
+            }
+        }
+    }
     
     return questsAndClues;
 }
@@ -63,11 +96,11 @@
     NSString* displayString;
     
     if ([clue.isSolved isEqualToNumber:[NSNumber numberWithBool:YES]]) {
-        //Dispaly Clue
+        //Display Clue
         CellIdentifier = @"cluesCell";
         displayString = clue.clueText;
     }else{
-        //Dispaly Quest
+        //Display Quest
         CellIdentifier = @"questCell";
         displayString = clue.questForClue.questText;
     }
@@ -79,7 +112,7 @@
     if (cell == nil) {
         cell = [[ONGClueTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.clueOrQuestTextLabel.text = displayString;
+    cell.clueOrQuestTextLabel.text = displayString?displayString:@"Damn, null cell !";
     return cell;
 }
 
@@ -89,11 +122,18 @@
         
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if (indexPath.row == 0) {
+    if (indexPath.row != 0) {
+        
+        NSLog(@"Clicking on this row!!!");
         
         Clue *clue = [self.clues objectAtIndex:indexPath.row];
         clue.isSolved = [NSNumber numberWithBool:YES];
-        clue.clueText = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[clue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":clue.clueForCharacter.name, clue.action, clue.location, [ONGUtils stringFromDate:clue.timestamp]];
+        
+        clue.clueText = @"Solve this anagram for a clue";
+        
+//        clue.clueText = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[clue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":clue.clueForCharacter.name, clue.action, clue.location, [ONGUtils stringFromDate:clue.timestamp]];
+        
+        
         [clue.managedObjectContext MR_saveToPersistentStoreAndWait];
         [self.loggedInCharacter addCluesObject:clue];
         
@@ -123,7 +163,7 @@
     self.loggedInCharacter = [Character getCharacterFromId:loggedInCharacterID inContext:self.context];
     
     //Set Title
-//    self.title = [NSString stringWithFormat:@"Playing As: %@",self.loggedInCharacter.name];
+    self.title = [NSString stringWithFormat:@"Clues",self.loggedInCharacter.name];
     
     //Get Data
     self.clues = [self getQuestsAndCluesInContext:self.context];

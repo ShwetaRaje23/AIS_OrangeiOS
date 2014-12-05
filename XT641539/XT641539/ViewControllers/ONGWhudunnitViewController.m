@@ -101,4 +101,6 @@
     ONGDialogueMessagesViewController* messageVC = (ONGDialogueMessagesViewController*)[segue destinationViewController];
     messageVC.characterToTalkTo = [self.characterList objectAtIndex:indexPath.row];
 }
+- (IBAction)doLogout:(id)sender {
+}
 @end

@@ -11,4 +11,6 @@
 @interface ONGWhudunnitViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (IBAction)doLogout:(id)sender;
+
 @end
