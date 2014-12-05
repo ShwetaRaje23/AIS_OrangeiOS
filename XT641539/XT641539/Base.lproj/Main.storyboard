@@ -337,7 +337,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="clueOrQuestTextLabel" destination="nsc-52-B0S" id="6wY-V0-JI7"/>
-                                            <segue destination="3nk-CJ-S4k" kind="push" identifier="showClue" id="vun-iA-0fM"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questCell" id="MUn-rr-9Sd" customClass="ONGClueTableViewCell">
@@ -372,6 +371,7 @@
                     <navigationItem key="navigationItem" id="3xz-hg-P8r"/>
                     <connections>
                         <outlet property="tableView" destination="N51-kV-Xcu" id="fgv-uP-wOK"/>
+                        <segue destination="3nk-CJ-S4k" kind="push" identifier="showQuest" id="P0u-w9-jNc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOU-T7-lsd" userLabel="First Responder" sceneMemberID="firstResponder"/>

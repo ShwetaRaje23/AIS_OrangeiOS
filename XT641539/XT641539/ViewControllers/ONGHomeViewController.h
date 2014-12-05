@@ -10,4 +10,6 @@
 
 @interface ONGHomeViewController : UIViewController
 
++ (NSDictionary*) sendSynchronousRequestOfType:(NSString*)type toUrlWithString:(NSString*)urlstring withData:(NSDictionary*)datadict;
+
 @end

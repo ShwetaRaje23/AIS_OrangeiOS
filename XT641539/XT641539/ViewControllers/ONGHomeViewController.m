@@ -9,6 +9,7 @@
 #import "ONGHomeViewController.h"
 #import "ONGCluesViewController.h"
 #import "Character+Extended.h"
+#import "Utils.h"
 
 //Temp
 #import "ONGCharacterSelectionViewController.h"
@@ -34,7 +35,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ONGCharacterSelectionViewController* cluesVC = [storyboard instantiateViewControllerWithIdentifier:@"ONGCharacterSelectionViewController"];
         [self.view.window setRootViewController:cluesVC];
-
+        
     }
     else {
         NSLog(@"Logged in before as %@", self.loggedInCharacter.name);
@@ -55,12 +56,16 @@
 #pragma mark Lifecycle
 
 - (void)viewDidLoad {
-   
+    
     //CONTEXT
     self.context = [NSManagedObjectContext MR_context];
-
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSDictionary *trialData = [Utils sendSynchronousRequestOfType:@"POST" toUrlWithString:@"http://orange-server.herokuapp.com/tellMeAStory/" withData:nil];
+    
+    NSLog(@"trialData ::: %@", trialData);
     
 }
 
@@ -91,5 +96,6 @@
     //Parse Story Data
     [Character parseStoryData:json];
 }
+
 
 @end
