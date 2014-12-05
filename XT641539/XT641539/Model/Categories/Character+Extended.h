@@ -7,7 +7,6 @@
 //
 
 #import "Character.h"
-#import "Quest+Extended.h"
 #import "Clue+Extended.h"
 
 @interface Character (Extended)

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Clue, DialogueMessage, Personality, Relationship;
+@class Clue, DialogueMessage;
 
 @interface Character : NSManagedObject
 
@@ -19,8 +19,6 @@
 @property (nonatomic, retain) NSString * characterDesc;
 @property (nonatomic, retain) NSSet *clues;
 @property (nonatomic, retain) NSSet *dialogueMessages;
-@property (nonatomic, retain) Personality *personality;
-@property (nonatomic, retain) NSSet *relationship;
 @end
 
 @interface Character (CoreDataGeneratedAccessors)
@@ -34,10 +32,5 @@
 - (void)removeDialogueMessagesObject:(DialogueMessage *)value;
 - (void)addDialogueMessages:(NSSet *)values;
 - (void)removeDialogueMessages:(NSSet *)values;
-
-- (void)addRelationshipObject:(Relationship *)value;
-- (void)removeRelationshipObject:(Relationship *)value;
-- (void)addRelationship:(NSSet *)values;
-- (void)removeRelationship:(NSSet *)values;
 
 @end

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="ActionBasedQuest" representedClassName="ActionBasedQuest" parentEntity="Quest" syncable="YES">
-        <attribute name="anagramOfString" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="Character" representedClassName="Character" syncable="YES">
         <attribute name="characterDesc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="characterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -10,19 +7,19 @@
         <attribute name="role" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="clues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Clue" inverseName="clueForCharacter" inverseEntity="Clue" syncable="YES"/>
         <relationship name="dialogueMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DialogueMessage" syncable="YES"/>
-        <relationship name="personality" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Personality" syncable="YES"/>
-        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relationship" syncable="YES"/>
     </entity>
     <entity name="Clue" representedClassName="Clue" syncable="YES">
         <attribute name="action" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clueId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clueText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isSolved" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="iteration" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="clueForCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="clues" inverseEntity="Character" syncable="YES"/>
         <relationship name="clueFromCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
-        <relationship name="questForClue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quest" inverseName="resultClue" inverseEntity="Quest" syncable="YES"/>
     </entity>
     <entity name="DialogueMessage" representedClassName="DialogueMessage" syncable="YES">
         <attribute name="clueId" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,28 +29,9 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="withCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
     </entity>
-    <entity name="LocationBasedQuest" representedClassName="LocationBasedQuest" parentEntity="Quest" syncable="YES">
-        <attribute name="direction" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="steps" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-    </entity>
-    <entity name="Personality" representedClassName="Personality" syncable="YES"/>
-    <entity name="Quest" representedClassName="Quest" syncable="YES">
-        <attribute name="questText" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="resultClue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clue" inverseName="questForClue" inverseEntity="Clue" syncable="YES"/>
-    </entity>
-    <entity name="Relationship" representedClassName="Relationship" syncable="YES"/>
-    <entity name="TimeBasedQuest" representedClassName="TimeBasedQuest" parentEntity="Quest" syncable="YES">
-        <attribute name="timeLimit" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="ActionBasedQuest" positionX="-90" positionY="108" width="128" height="58"/>
-        <element name="Character" positionX="-234" positionY="-270" width="128" height="163"/>
-        <element name="Clue" positionX="-47" positionY="-270" width="128" height="180"/>
+        <element name="Character" positionX="-234" positionY="-270" width="128" height="133"/>
+        <element name="Clue" positionX="-47" positionY="-270" width="128" height="208"/>
         <element name="DialogueMessage" positionX="-281" positionY="-58" width="128" height="133"/>
-        <element name="LocationBasedQuest" positionX="-128" positionY="-9" width="128" height="73"/>
-        <element name="Personality" positionX="-369" positionY="-216" width="128" height="45"/>
-        <element name="Quest" positionX="27" positionY="-46" width="128" height="73"/>
-        <element name="Relationship" positionX="-396" positionY="-117" width="128" height="45"/>
-        <element name="TimeBasedQuest" positionX="70" positionY="108" width="128" height="58"/>
     </elements>
 </model>

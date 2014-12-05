@@ -8,7 +8,6 @@
 
 #import "Clue.h"
 #import "Clue+Extended.h"
-#import "Quest+Extended.h"
 
 @interface Clue (Extended)
 + (Clue*) getClueFromId:(NSString*)clueId inContext:(NSManagedObjectContext*)context;

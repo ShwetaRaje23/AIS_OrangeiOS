@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CoreData+MagicalRecord.h"
+#import "Utils.h"
 #define RGBCOLOR(r, g, b) [UIColor colorWithRed:r/225.0f green:g/225.0f blue:b/225.0f alpha:1]
 
 
@@ -22,12 +23,52 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"XT641539.sqlite"];
+//    
+//    if([[NSFileManager defaultManager] fileExistsAtPath:filePath]){
+//        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+//    }
+
+    
+    
+    NSPersistentStoreCoordinator* persistentStoreCoordinator =[NSPersistentStoreCoordinator MR_coordinatorWithSqliteStoreNamed:@"XT641539.sqlite"];
+    NSArray *stores = [persistentStoreCoordinator persistentStores];
+    
+    for(NSPersistentStore *store in stores) {
+        [persistentStoreCoordinator removePersistentStore:store error:nil];
+        [[NSFileManager defaultManager] removeItemAtPath:store.URL.path error:nil];
+    }
+    
+ persistentStoreCoordinator = nil;
+    
+    
+    //Logout user
+    [[NSUserDefaults standardUserDefaults]setObject:nil forKey:LOGGED_IN_CHARACTER];
     
     [self setupCoreDataStack];
-    
     [self.window setTintColor:RGBCOLOR(247.0f, 134.0f, 63.0f)];
     
+    //TODO: Move to some loading screen
+    self.storyDictionary = [Utils parseStoryJSON];
+    
+    
+    
     return YES;
+}
+
+-(void) flushDatabase:(NSManagedObjectContext*)managedObjectContext and:(NSPersistentStoreCoordinator*)persistentStoreCoordinator{
+    [_managedObjectContext lock];
+    NSArray *stores = [persistentStoreCoordinator persistentStores];
+    for(NSPersistentStore *store in stores) {
+        [persistentStoreCoordinator removePersistentStore:store error:nil];
+        [[NSFileManager defaultManager] removeItemAtPath:store.URL.path error:nil];
+    }
+    [managedObjectContext unlock];
+    _managedObjectModel    = nil;
+    managedObjectContext  = nil;
+    persistentStoreCoordinator = nil;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

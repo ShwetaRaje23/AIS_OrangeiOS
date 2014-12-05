@@ -9,13 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Utils : NSObject
-
-//+ (NSDictionary*) sendSynchronousRequestOfType:(NSString*)type toUrlWithString:(NSString*)urlstring withData:(NSDictionary*)datadict;
-//
-+ (NSDictionary *) parseStoryJSON;
-
-+(NSDictionary *) getCharactersFromResponseDictionary;
-
-+(NSDictionary *) getHistoryFromResponseDictionary;
-
++ (NSDictionary*) parseStoryJSON;
 @end

@@ -38,8 +38,18 @@
     }
     
     Character* character = [self.characterList objectAtIndex:indexPath.row];
-    cell.characterLabel.text = character.name;
-    cell.descriptionLabel.text = @"Description";
+    if (![character.characterID isEqualToNumber:[[NSUserDefaults standardUserDefaults] valueForKey:@"victimid"]]) {
+        cell.characterLabel.text = character.name;
+        cell.descriptionLabel.text = character.characterDesc;
+        cell.userInteractionEnabled = YES;
+    }
+    else{
+        cell.characterLabel.text = character.name;
+        cell.descriptionLabel.text = character.characterDesc;
+        [cell setUserInteractionEnabled:NO];
+//        cell.contentView.backgroundColor = [UIColor colorWithWhite:10 alpha:1.0];
+        return cell;
+    }
     
     return cell;
 }

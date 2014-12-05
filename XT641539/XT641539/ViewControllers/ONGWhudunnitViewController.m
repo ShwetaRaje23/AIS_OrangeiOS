@@ -46,8 +46,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     Character* character = [self.characterList objectAtIndex:indexPath.row];
-    NSString* message = [NSString stringWithFormat:@"You have accused %@ of the murder. You will be told the truth at the end of the game.", character.name];
-    [[[UIAlertView alloc]initWithTitle:@"J'accuse !" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil]show];
+//    NSString* message = [NSString stringWithFormat:@"You have accused %@ of the murder. You will be told the truth at the end of the game.", character.name];
+//    [[[UIAlertView alloc]initWithTitle:@"J'accuse !" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil]show];
+    
+    NSString* motive = [[NSUserDefaults standardUserDefaults] valueForKey:@"motive"];
+    NSNumber* killer = [[NSUserDefaults standardUserDefaults]valueForKey:@"killerid"];
+    NSString* killChar = @"";
+    for (Character* ch in self.characterList) {
+        if ([ch.characterID isEqualToNumber:killer]) {
+            killChar = ch.name;
+        }
+    }
+    
+    [[[UIAlertView alloc]initWithTitle:killChar message:motive delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil]show];
+    
     
 }
 

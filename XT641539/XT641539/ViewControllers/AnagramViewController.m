@@ -162,15 +162,15 @@
 
 -(void)checkForSuccess
 {
-        for (TargetView* t in _targets) {
-            //no success, bail out
-            if (t.isMatched==NO) return;
-        }
+//        for (TargetView* t in _targets) {
+//            //no success, bail out
+//            if (t.isMatched==NO) return;
+//        }
     
-    _clueToShow.clueText = [NSString stringWithFormat:@"%@ %@ in %@ at %@",[_clueToShow.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":_clueToShow.clueForCharacter.name, _clueToShow.action, _clueToShow.location, [ONGUtils stringFromDate:_clueToShow.timestamp]];
-    _clueToShow.isSolved = [NSNumber numberWithBool:YES];
+    self.clueToShow.clueText = [NSString stringWithFormat:@"%@ %@ %@ in %@ at %@",[_clueToShow.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":_clueToShow.clueForCharacter.name, _clueToShow.action, _clueToShow.object, _clueToShow.location, self.clueToShow.timestamp];
+    self.clueToShow.isSolved = [NSNumber numberWithBool:YES];
     
-    [_clueToShow.managedObjectContext MR_saveToPersistentStoreAndWait];
+    [self.clueToShow.managedObjectContext MR_saveToPersistentStoreAndWait];
     
     NSLog(@"Game Over");
     NSLog(@"Clue to show %@", _clueToShow);

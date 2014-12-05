@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Clue+Extended.h"
-#import "Quest+Extended.h"
 #import "Character+Extended.h"
 #import "ONGClueTableViewCell.h"
 

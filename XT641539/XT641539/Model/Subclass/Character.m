@@ -9,8 +9,6 @@
 #import "Character.h"
 #import "Clue.h"
 #import "DialogueMessage.h"
-#import "Personality.h"
-#import "Relationship.h"
 
 
 @implementation Character
@@ -21,7 +19,5 @@
 @dynamic characterDesc;
 @dynamic clues;
 @dynamic dialogueMessages;
-@dynamic personality;
-@dynamic relationship;
 
 @end

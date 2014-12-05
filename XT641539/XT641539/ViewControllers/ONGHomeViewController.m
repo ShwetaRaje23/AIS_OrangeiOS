@@ -26,6 +26,7 @@
 - (IBAction)playButtonPressed:(UIButton *)sender {
     
     
+    
     //Logged In Character
     _loggedInCharacterID = [[NSUserDefaults standardUserDefaults]objectForKey:LOGGED_IN_CHARACTER];
     _loggedInCharacter = [Character getCharacterFromId:_loggedInCharacterID inContext:self.context];
@@ -69,17 +70,8 @@
     
     [super viewDidAppear:animated];
     
-    NSDictionary* characters = [Utils getCharactersFromResponseDictionary];
-    NSDictionary* histories = [Utils getHistoryFromResponseDictionary];
-
-    for (NSDictionary* character in characters) {
-        [Character parseStoryData:character];
-    }
-    
-    for (NSDictionary* history in histories) {
-        [Character parseStoryHistory:history];
-    }
-    
+    //Already done
+//    [Utils parseStoryJSON];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -107,9 +107,6 @@
         clue.clueId = [historyDict valueForKey:@"clueId"];
         
         //Create Quest and Clues
-        Quest* quest = [Quest createQuestUsingClue:clue inContext:context];
-        
-        clue.questForClue = quest;
         [context MR_saveToPersistentStoreAndWait];
     }
     

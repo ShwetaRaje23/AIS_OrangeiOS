@@ -8,7 +8,6 @@
 
 #import "Clue.h"
 #import "Character.h"
-#import "Quest.h"
 
 
 @implementation Clue
@@ -17,10 +16,12 @@
 @dynamic clueId;
 @dynamic clueText;
 @dynamic isSolved;
+@dynamic iteration;
 @dynamic location;
+@dynamic object;
 @dynamic timestamp;
+@dynamic questText;
 @dynamic clueForCharacter;
 @dynamic clueFromCharacter;
-@dynamic questForClue;
 
 @end
