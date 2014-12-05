@@ -72,10 +72,7 @@
 		D90431611A313BD500D9E398 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = D904315D1A313BD500D9E398 /* tile.png */; };
 		D90431621A313BD500D9E398 /* tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D904315E1A313BD500D9E398 /* tile@2x.png */; };
 		D90431651A31416100D9E398 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90431641A31416100D9E398 /* TargetView.m */; };
-		D904316E1A31479300D9E398 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D90431661A31479300D9E398 /* ding.mp3 */; };
 		D904316F1A31479300D9E398 /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = D90431671A31479300D9E398 /* particle.png */; };
-		D90431741A31479300D9E398 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D904316C1A31479300D9E398 /* win.mp3 */; };
-		D90431751A31479300D9E398 /* wrong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D904316D1A31479300D9E398 /* wrong.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,10 +213,7 @@
 		D904315E1A313BD500D9E398 /* tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile@2x.png"; sourceTree = "<group>"; };
 		D90431631A31416100D9E398 /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetView.h; path = ViewControllers/TargetView.h; sourceTree = "<group>"; };
 		D90431641A31416100D9E398 /* TargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetView.m; path = ViewControllers/TargetView.m; sourceTree = "<group>"; };
-		D90431661A31479300D9E398 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		D90431671A31479300D9E398 /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
-		D904316C1A31479300D9E398 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
-		D904316D1A31479300D9E398 /* wrong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -567,10 +561,7 @@
 		D904315A1A313BD500D9E398 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D90431661A31479300D9E398 /* ding.mp3 */,
 				D90431671A31479300D9E398 /* particle.png */,
-				D904316C1A31479300D9E398 /* win.mp3 */,
-				D904316D1A31479300D9E398 /* wrong.m4a */,
 				D904315B1A313BD500D9E398 /* slot.png */,
 				D904315C1A313BD500D9E398 /* slot@2x.png */,
 				D904315D1A313BD500D9E398 /* tile.png */,
@@ -660,18 +651,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D904314B1A312ACA00D9E398 /* anagrams.plist in Resources */,
-				D90431741A31479300D9E398 /* win.mp3 in Resources */,
 				D90431611A313BD500D9E398 /* tile.png in Resources */,
 				C12D0EFB19F6D4AA00EA2B26 /* Main.storyboard in Resources */,
 				C89A306F19FC698600650370 /* sampleServerResponse.json in Resources */,
 				D90431601A313BD500D9E398 /* slot@2x.png in Resources */,
 				D90431621A313BD500D9E398 /* tile@2x.png in Resources */,
-				D904316E1A31479300D9E398 /* ding.mp3 in Resources */,
 				C12D0F0019F6D4AA00EA2B26 /* LaunchScreen.xib in Resources */,
 				C12D0EFD19F6D4AA00EA2B26 /* Images.xcassets in Resources */,
 				D904316F1A31479300D9E398 /* particle.png in Resources */,
 				D904315F1A313BD500D9E398 /* slot.png in Resources */,
-				D90431751A31479300D9E398 /* wrong.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

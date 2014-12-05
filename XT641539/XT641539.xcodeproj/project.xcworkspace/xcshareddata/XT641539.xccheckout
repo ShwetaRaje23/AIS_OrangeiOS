@@ -12,20 +12,24 @@
 	<dict>
 		<key>2CF003A5870D6A40FD55C03B20F9BB877373E950</key>
 		<string>https://github.gatech.edu/SashaZd/GaTech.git</string>
+		<key>2DDEE7F341A560F25E3CFAE5046B9107AB13A925</key>
+		<string>https://github.gatech.edu/ssalunke3/Orange-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AIS - 7634/Project Stuff/Project/Orange-iOS-master/XT641539/XT641539.xcodeproj</string>
+	<string>XT641539/XT641539.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2CF003A5870D6A40FD55C03B20F9BB877373E950</key>
 		<string>../../../../../../..</string>
+		<key>2DDEE7F341A560F25E3CFAE5046B9107AB13A925</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.gatech.edu/SashaZd/GaTech.git</string>
+	<string>https://github.gatech.edu/ssalunke3/Orange-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2CF003A5870D6A40FD55C03B20F9BB877373E950</string>
+	<string>2DDEE7F341A560F25E3CFAE5046B9107AB13A925</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>2CF003A5870D6A40FD55C03B20F9BB877373E950</string>
 			<key>IDESourceControlWCCName</key>
-			<string>GaTech</string>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2DDEE7F341A560F25E3CFAE5046B9107AB13A925</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Orange-iOS</string>
 		</dict>
 	</array>
 </dict>
