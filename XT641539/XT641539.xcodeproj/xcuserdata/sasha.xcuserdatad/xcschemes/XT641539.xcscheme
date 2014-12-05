@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C12D0EE819F6D4AA00EA2B26"
-               BuildableName = "XT641539.app"
-               BlueprintName = "XT641539"
+               BuildableName = "Orange.app"
+               BlueprintName = "Orange"
                ReferencedContainer = "container:XT641539.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C12D0F0419F6D4AA00EA2B26"
-               BuildableName = "XT641539Tests.xctest"
-               BlueprintName = "XT641539Tests"
+               BuildableName = "OrangeTests.xctest"
+               BlueprintName = "OrangeTests"
                ReferencedContainer = "container:XT641539.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C12D0F0419F6D4AA00EA2B26"
-               BuildableName = "XT641539Tests.xctest"
-               BlueprintName = "XT641539Tests"
+               BuildableName = "OrangeTests.xctest"
+               BlueprintName = "OrangeTests"
                ReferencedContainer = "container:XT641539.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C12D0EE819F6D4AA00EA2B26"
-            BuildableName = "XT641539.app"
-            BlueprintName = "XT641539"
+            BuildableName = "Orange.app"
+            BlueprintName = "Orange"
             ReferencedContainer = "container:XT641539.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C12D0EE819F6D4AA00EA2B26"
-            BuildableName = "XT641539.app"
-            BlueprintName = "XT641539"
+            BuildableName = "Orange.app"
+            BlueprintName = "Orange"
             ReferencedContainer = "container:XT641539.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -94,8 +94,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C12D0EE819F6D4AA00EA2B26"
-            BuildableName = "XT641539.app"
-            BlueprintName = "XT641539"
+            BuildableName = "Orange.app"
+            BlueprintName = "Orange"
             ReferencedContainer = "container:XT641539.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

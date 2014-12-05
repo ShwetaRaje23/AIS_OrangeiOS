@@ -22,16 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"XT641539.sqlite"];
-//    
-//    if([[NSFileManager defaultManager] fileExistsAtPath:filePath]){
-//        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
-//    }
 
-    
     
     NSPersistentStoreCoordinator* persistentStoreCoordinator =[NSPersistentStoreCoordinator MR_coordinatorWithSqliteStoreNamed:@"XT641539.sqlite"];
     NSArray *stores = [persistentStoreCoordinator persistentStores];
@@ -41,7 +32,7 @@
         [[NSFileManager defaultManager] removeItemAtPath:store.URL.path error:nil];
     }
     
- persistentStoreCoordinator = nil;
+     persistentStoreCoordinator = nil;
     
     
     //Logout user
@@ -53,9 +44,24 @@
     //TODO: Move to some loading screen
     self.storyDictionary = [Utils parseStoryJSON];
     
+    [self registerForPushNotifications:application];
     
     
     return YES;
+}
+
+-(void) registerForPushNotifications: (UIApplication *)application {
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+    #ifdef __IPHONE_8_0
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIRemoteNotificationTypeBadge
+                                                                                             |UIRemoteNotificationTypeSound
+                                                                                             |UIRemoteNotificationTypeAlert) categories:nil];
+        [application registerUserNotificationSettings:settings];
+    #endif
+    } else {
+        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:myTypes];
+    }
 }
 
 -(void) flushDatabase:(NSManagedObjectContext*)managedObjectContext and:(NSPersistentStoreCoordinator*)persistentStoreCoordinator{

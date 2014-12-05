@@ -556,9 +556,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C12D0EE819F6D4AA00EA2B26 /* XT641539 */ = {
+		C12D0EE819F6D4AA00EA2B26 /* Orange */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C12D0F0F19F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "XT641539" */;
+			buildConfigurationList = C12D0F0F19F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "Orange" */;
 			buildPhases = (
 				C12D0EE519F6D4AA00EA2B26 /* Sources */,
 				C12D0EE619F6D4AA00EA2B26 /* Frameworks */,
@@ -568,14 +568,14 @@
 			);
 			dependencies = (
 			);
-			name = XT641539;
+			name = Orange;
 			productName = XT641539;
 			productReference = C12D0EE919F6D4AA00EA2B26 /* XT641539.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C12D0F0419F6D4AA00EA2B26 /* XT641539Tests */ = {
+		C12D0F0419F6D4AA00EA2B26 /* OrangeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C12D0F1219F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "XT641539Tests" */;
+			buildConfigurationList = C12D0F1219F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "OrangeTests" */;
 			buildPhases = (
 				C12D0F0119F6D4AA00EA2B26 /* Sources */,
 				C12D0F0219F6D4AA00EA2B26 /* Frameworks */,
@@ -586,7 +586,7 @@
 			dependencies = (
 				C12D0F0719F6D4AA00EA2B26 /* PBXTargetDependency */,
 			);
-			name = XT641539Tests;
+			name = OrangeTests;
 			productName = XT641539Tests;
 			productReference = C12D0F0519F6D4AA00EA2B26 /* XT641539Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -622,8 +622,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C12D0EE819F6D4AA00EA2B26 /* XT641539 */,
-				C12D0F0419F6D4AA00EA2B26 /* XT641539Tests */,
+				C12D0EE819F6D4AA00EA2B26 /* Orange */,
+				C12D0F0419F6D4AA00EA2B26 /* OrangeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -726,7 +726,7 @@
 /* Begin PBXTargetDependency section */
 		C12D0F0719F6D4AA00EA2B26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C12D0EE819F6D4AA00EA2B26 /* XT641539 */;
+			target = C12D0EE819F6D4AA00EA2B26 /* Orange */;
 			targetProxy = C12D0F0619F6D4AA00EA2B26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -919,7 +919,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C12D0F0F19F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "XT641539" */ = {
+		C12D0F0F19F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "Orange" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C12D0F1019F6D4AA00EA2B26 /* Debug */,
@@ -928,7 +928,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C12D0F1219F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "XT641539Tests" */ = {
+		C12D0F1219F6D4AA00EA2B26 /* Build configuration list for PBXNativeTarget "OrangeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C12D0F1319F6D4AA00EA2B26 /* Debug */,
