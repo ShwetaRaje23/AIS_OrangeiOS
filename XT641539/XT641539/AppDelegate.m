@@ -50,20 +50,6 @@
     return YES;
 }
 
--(void) registerForPushNotifications: (UIApplication *)application {
-    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-    #ifdef __IPHONE_8_0
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIRemoteNotificationTypeBadge
-                                                                                             |UIRemoteNotificationTypeSound
-                                                                                             |UIRemoteNotificationTypeAlert) categories:nil];
-        [application registerUserNotificationSettings:settings];
-    #endif
-    } else {
-        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
-        [application registerForRemoteNotificationTypes:myTypes];
-    }
-}
-
 -(void) flushDatabase:(NSManagedObjectContext*)managedObjectContext and:(NSPersistentStoreCoordinator*)persistentStoreCoordinator{
     [_managedObjectContext lock];
     NSArray *stores = [persistentStoreCoordinator persistentStores];
@@ -121,6 +107,48 @@
         }
     }
 }
+
+
+#pragma mark - Push Notifications 
+
+-(void) registerForPushNotifications: (UIApplication *)application {
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+#ifdef __IPHONE_8_0
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIRemoteNotificationTypeBadge
+                                                                                             |UIRemoteNotificationTypeSound
+                                                                                             |UIRemoteNotificationTypeAlert) categories:nil];
+        [application registerUserNotificationSettings:settings];
+#endif
+    } else {
+        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:myTypes];
+    }
+}
+
+#ifdef __IPHONE_8_0
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    //register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    //handle the actions
+    if ([identifier isEqualToString:@"declineAction"]){
+        NSLog(@"Declining Action");
+    }
+    else if ([identifier isEqualToString:@"answerAction"]){
+        NSLog(@"Accepting Action");
+    }
+}
+#endif
+
+
+
+
+
+
 
 
 //#pragma mark - Core Data stack
