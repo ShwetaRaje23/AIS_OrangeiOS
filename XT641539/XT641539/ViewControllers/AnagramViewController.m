@@ -7,7 +7,6 @@
 //
 
 #import "AnagramViewController.h"
-#import "Anagram.h"
 #import "TargetView.h"
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -88,11 +87,11 @@
     CGFloat kScreenWidth = self.view.frame.size.width;
     CGFloat kScreenHeight = self.view.frame.size.height;
     
-    Anagram* anaAttempt = [Anagram levelWithNum:1];
+//    Anagram* anaAttempt = [Anagram levelWithNum:1];
     
     NSString *answerAnagram = [_clueToShow valueForKey:@"location"];
     NSString *tryAnagram = [self shuffle:answerAnagram];
-        
+    
     float ansAnaLength = [answerAnagram length];
     float tryAnaLength = [tryAnagram length];
     
@@ -179,11 +178,6 @@
 
 -(void)checkForSuccess
 {
-//        for (TargetView* t in _targets) {
-//            //no success, bail out
-//            if (t.isMatched==NO) return;
-//        }
-    
     self.clueToShow.clueText = [NSString stringWithFormat:@"%@ %@ %@ in %@ at %@",[_clueToShow.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":_clueToShow.clueForCharacter.name, _clueToShow.action, _clueToShow.object, _clueToShow.location, self.clueToShow.timestamp];
     self.clueToShow.isSolved = [NSNumber numberWithBool:YES];
     

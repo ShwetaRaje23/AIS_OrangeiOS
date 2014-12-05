@@ -59,7 +59,6 @@
 		C89A30B719FC7A4500650370 /* Clue+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A30B619FC7A4500650370 /* Clue+Extended.m */; };
 		D90431491A3119E100D9E398 /* AnagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90431481A3119E100D9E398 /* AnagramViewController.m */; };
 		D904314B1A312ACA00D9E398 /* anagrams.plist in Resources */ = {isa = PBXBuildFile; fileRef = D904314A1A312ACA00D9E398 /* anagrams.plist */; };
-		D90431561A3131BE00D9E398 /* Anagram.m in Sources */ = {isa = PBXBuildFile; fileRef = D90431551A3131BE00D9E398 /* Anagram.m */; };
 		D90431591A313AF900D9E398 /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90431581A313AF900D9E398 /* TileView.m */; };
 		D904315F1A313BD500D9E398 /* slot.png in Resources */ = {isa = PBXBuildFile; fileRef = D904315B1A313BD500D9E398 /* slot.png */; };
 		D90431601A313BD500D9E398 /* slot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D904315C1A313BD500D9E398 /* slot@2x.png */; };
@@ -187,8 +186,6 @@
 		D90431471A3119E100D9E398 /* AnagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnagramViewController.h; path = ViewControllers/AnagramViewController.h; sourceTree = "<group>"; };
 		D90431481A3119E100D9E398 /* AnagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnagramViewController.m; path = ViewControllers/AnagramViewController.m; sourceTree = "<group>"; };
 		D904314A1A312ACA00D9E398 /* anagrams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = anagrams.plist; sourceTree = "<group>"; };
-		D90431541A3131BE00D9E398 /* Anagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anagram.h; sourceTree = "<group>"; };
-		D90431551A3131BE00D9E398 /* Anagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anagram.m; sourceTree = "<group>"; };
 		D90431571A313AF900D9E398 /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TileView.h; path = ViewControllers/TileView.h; sourceTree = "<group>"; };
 		D90431581A313AF900D9E398 /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TileView.m; path = ViewControllers/TileView.m; sourceTree = "<group>"; };
 		D904315B1A313BD500D9E398 /* slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slot.png; sourceTree = "<group>"; };
@@ -518,8 +515,6 @@
 				A03D92091A31C5E1003B8677 /* Character.m */,
 				A03D92021A31C5E0003B8677 /* DialogueMessage.h */,
 				A03D92031A31C5E0003B8677 /* DialogueMessage.m */,
-				D90431541A3131BE00D9E398 /* Anagram.h */,
-				D90431551A3131BE00D9E398 /* Anagram.m */,
 			);
 			name = Subclass;
 			path = Model/Subclass;
@@ -678,7 +673,6 @@
 				C12D0EF519F6D4AA00EA2B26 /* XT641539.xcdatamodeld in Sources */,
 				A03D918B1A31ADC6003B8677 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				C89A30B719FC7A4500650370 /* Clue+Extended.m in Sources */,
-				D90431561A3131BE00D9E398 /* Anagram.m in Sources */,
 				A03D91951A31ADC6003B8677 /* MagicalRecord.m in Sources */,
 				A03D917F1A31ADC6003B8677 /* NSNumber+MagicalDataImport.m in Sources */,
 				D9BBC3141A319030002566DD /* Utils.m in Sources */,
