@@ -144,14 +144,15 @@
 #pragma mark Tableview Delegates
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     Clue *clue;
     switch (indexPath.section) {
         case 0:{
             //Quest
             clue = [self.unsolvedclues objectAtIndex:indexPath.row];
             [self performSegueWithIdentifier:@"showQuest" sender:clue];
-            break;}
+            break;
+        }
         default:{
             //See Clue Details
 //            clue = [self.solvedclues objectAtIndex:indexPath.row];

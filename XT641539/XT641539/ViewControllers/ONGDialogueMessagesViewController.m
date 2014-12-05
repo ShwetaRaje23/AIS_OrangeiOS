@@ -170,7 +170,7 @@ const int fromCharacterResponseTag = 0;
                     //Create a response
                     DialogueMessage* newMessage2 = [DialogueMessage MR_createEntityInContext:self.characterToTalkTo.managedObjectContext];
                     newMessage2.messageId = [NSString stringWithFormat:@"%ld",random()];
-                    newMessage2.messageText = @"Some response text";
+                    newMessage2.messageText = @"Waiting for Governor to type...";
                     newMessage2.timestamp = [NSDate date];
                     newMessage2.recievedFromCharacter = [NSNumber numberWithBool:YES];
                     newMessage2.clueId = nil;

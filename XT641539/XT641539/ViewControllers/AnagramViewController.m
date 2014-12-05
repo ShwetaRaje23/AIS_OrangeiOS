@@ -25,6 +25,7 @@
 @property (nonatomic,strong) NSManagedObjectContext* context;
 @property (nonatomic,strong) Character* loggedInCharacter;
 
+
 @end
 
 @implementation AnagramViewController{
@@ -62,6 +63,26 @@
     //    self.controller.gameView = gameLayer;
 }
 
+- (NSString *)shuffle:(NSString*)thisString{
+    
+    NSMutableArray *tempArr = [[NSMutableArray alloc]initWithCapacity:[thisString length]];
+    
+    for (int i=0; i < [thisString length]; i++) {
+        NSString *ichar  = [NSString stringWithFormat:@"%c", [thisString characterAtIndex:i]];
+        [tempArr addObject:ichar];
+    }
+    
+    for (int i = 0; i < tempArr.count; i++) {
+        int randomInt1 = arc4random() % [tempArr count];
+        int randomInt2 = arc4random() % [tempArr count];
+        [tempArr exchangeObjectAtIndex:randomInt1 withObjectAtIndex:randomInt2];
+    }
+    
+    NSString *tempString = [tempArr componentsJoinedByString:@""];
+    
+    return tempString;
+}
+
 - (void) dealRandomAnagrams {
     
     CGFloat kScreenWidth = self.view.frame.size.width;
@@ -69,15 +90,11 @@
     
     Anagram* anaAttempt = [Anagram levelWithNum:1];
     
-    int randomIndex = arc4random()%[anaAttempt.anagrams count];
-    NSArray* anaPair = anaAttempt.anagrams[ randomIndex ];
-    
-    
-    NSString *tryAnagram = [anaPair objectAtIndex:0];
-    float tryAnaLength = [tryAnagram length];
-    
-    NSString *answerAnagram = [anaPair objectAtIndex:1];
+    NSString *answerAnagram = [_clueToShow valueForKey:@"location"];
+    NSString *tryAnagram = [self shuffle:answerAnagram];
+        
     float ansAnaLength = [answerAnagram length];
+    float tryAnaLength = [tryAnagram length];
     
     //calculate the tile size
     float maxLength = MAX(tryAnaLength, ansAnaLength);

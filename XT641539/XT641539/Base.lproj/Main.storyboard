@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cuB-ug-JfI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cuB-ug-JfI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -445,11 +445,11 @@
             </objects>
             <point key="canvasLocation" x="770" y="920"/>
         </scene>
-        <!--Dialogue-->
+        <!--Navigation Controller-->
         <scene sceneID="Nia-eL-0jX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2EK-40-mvt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dialogue" id="JDX-Hg-CHh"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="JDX-Hg-CHh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9dJ-YF-e7x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -464,11 +464,11 @@
             </objects>
             <point key="canvasLocation" x="1415" y="119"/>
         </scene>
-        <!--Whodunnit-->
+        <!--Navigation Controller-->
         <scene sceneID="lDZ-aL-Hn4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d2k-3q-axL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Whodunnit" id="sAU-6e-vO2"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="sAU-6e-vO2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UEU-QW-0yo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -483,11 +483,11 @@
             </objects>
             <point key="canvasLocation" x="1415" y="878"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Clues-->
         <scene sceneID="AuJ-5r-xbe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EE9-eu-l7m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="clueTab" id="Bll-jv-ZbO"/>
+                    <tabBarItem key="tabBarItem" title="Clues" image="clueTab" id="Bll-jv-ZbO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oa5-Z3-aG3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -504,7 +504,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clueTab" width="40" height="40"/>
+        <image name="clueTab" width="62" height="50"/>
         <image name="orangeSplat" width="618" height="454"/>
         <image name="themDialogue" width="633" height="108"/>
         <image name="usDialogue" width="633" height="108"/>
