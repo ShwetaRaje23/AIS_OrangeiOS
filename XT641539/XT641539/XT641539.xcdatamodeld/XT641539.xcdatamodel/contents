@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ActionBasedQuest" representedClassName="ActionBasedQuest" parentEntity="Quest" syncable="YES">
         <attribute name="anagramOfString" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -17,7 +17,7 @@
         <attribute name="clueId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clueText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isSolved" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="clueForCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="clues" inverseEntity="Character" syncable="YES"/>
         <relationship name="clueFromCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
@@ -47,12 +47,12 @@
     <elements>
         <element name="ActionBasedQuest" positionX="-90" positionY="108" width="128" height="58"/>
         <element name="Character" positionX="-234" positionY="-270" width="128" height="148"/>
-        <element name="Clue" positionX="-47" positionY="-270" width="128" height="178"/>
+        <element name="Clue" positionX="-47" positionY="-270" width="128" height="180"/>
         <element name="DialogueMessage" positionX="-281" positionY="-58" width="128" height="133"/>
         <element name="LocationBasedQuest" positionX="-128" positionY="-9" width="128" height="73"/>
-        <element name="Personality" positionX="-369" positionY="-216" width="128" height="43"/>
+        <element name="Personality" positionX="-369" positionY="-216" width="128" height="45"/>
         <element name="Quest" positionX="27" positionY="-46" width="128" height="73"/>
-        <element name="Relationship" positionX="-396" positionY="-117" width="128" height="43"/>
+        <element name="Relationship" positionX="-396" positionY="-117" width="128" height="45"/>
         <element name="TimeBasedQuest" positionX="70" positionY="108" width="128" height="58"/>
     </elements>
 </model>

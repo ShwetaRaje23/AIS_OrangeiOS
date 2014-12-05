@@ -33,7 +33,7 @@
 + (void) parseStoryData:(NSDictionary*)storyData{
     
     NSArray* characters = [storyData valueForKey:@"characters"];
-    NSArray* histories = [storyData valueForKey:@"storyHistory"];
+    NSArray* histories = [storyData valueForKey:@"history"];
     
     //Parse characters
     for (NSDictionary* character in characters) {

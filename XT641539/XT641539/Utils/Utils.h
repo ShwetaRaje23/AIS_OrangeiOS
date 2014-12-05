@@ -10,6 +10,12 @@
 
 @interface Utils : NSObject
 
-+ (NSDictionary*) sendSynchronousRequestOfType:(NSString*)type toUrlWithString:(NSString*)urlstring withData:(NSDictionary*)datadict;
+//+ (NSDictionary*) sendSynchronousRequestOfType:(NSString*)type toUrlWithString:(NSString*)urlstring withData:(NSDictionary*)datadict;
+//
++ (NSDictionary *) parseStoryJSON;
+
++(NSDictionary *) getCharactersFromResponseDictionary;
+
++(NSDictionary *) getHistoryFromResponseDictionary;
 
 @end

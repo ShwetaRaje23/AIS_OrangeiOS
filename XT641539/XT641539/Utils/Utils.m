@@ -16,10 +16,7 @@
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlstring]];
     [theRequest setHTTPMethod:type?type:@"GET"];
     if (datadict) {
-        NSLog(@"%@",datadict);
-        //        [theRequest setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-        //        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:datadict options:0 error:nil];
-        //        [theRequest setHTTPBody:[NSKeyedArchiver archivedDataWithRootObject:jsonData]];
+//        NSLog(@"%@",datadict);
         
         NSMutableString* myParameters = [[NSMutableString alloc]initWithCapacity:1];
         BOOL is_first_dict_value = YES;
@@ -33,7 +30,7 @@
         }
         
         
-        NSLog(@"%@",myParameters);
+//        NSLog(@"%@",myParameters);
         [theRequest setHTTPBody:[myParameters dataUsingEncoding:NSUTF8StringEncoding]];
         
     }
@@ -47,18 +44,42 @@
                                                       error:&error];
     
     if (error == nil) {
-                NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+//        NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         NSDictionary* responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"Response Dictionary = %@",responseDict);
+//        NSLog(@"Response Dictionary = %@",responseDict);
         return responseDict;
     }
     else {
-                NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-        NSLog(@"%@", [error userInfo]);
+//        NSString *response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+//        NSLog(@"%@", [error userInfo]);
         return @{@"error":[error userInfo]};
     }
+}
+
++ (NSDictionary*) parseStoryJSON {
     
+    NSDictionary *jsonResponse = [self sendSynchronousRequestOfType:@"GET" toUrlWithString:@"http://orange-server.herokuapp.com/tellMeAStory/" withData:nil];
+    
+    NSLog(@"%@",jsonResponse);
+    return jsonResponse;
+}
+
++ (NSDictionary *) getCharactersFromResponseDictionary {
+    
+    NSDictionary *characters = [[self parseStoryJSON] objectForKey:@"characters"];
+    
+    return characters;
     
 }
+
++(NSDictionary *) getHistoryFromResponseDictionary {
+    
+    NSDictionary *history = [[self parseStoryJSON] objectForKey:@"history"];
+    NSLog(@"HISTORY :::::::: %@", history);
+    
+    return history;
+}
+
+
 
 @end

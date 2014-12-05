@@ -63,17 +63,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSDictionary *trialData = [Utils sendSynchronousRequestOfType:@"GET" toUrlWithString:@"http://orange-server.herokuapp.com/tellMeAStory/" withData:nil];
-    
-    NSLog(@"trialData ::: %@", trialData);
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
     
-    [self parseStoryJSON];
+    NSDictionary* jsonData = [Utils parseStoryJSON];
+    [Character parseStoryData:jsonData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,18 +82,18 @@
 //TODO Remove and put in a game manger file
 #pragma mark Helper
 
-- (void) parseStoryJSON{
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sampleServerResponse" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    
-    NSLog(@"%@",json);
-    
-    //Parse Story Data
-    [Character parseStoryData:json];
-}
+//- (void) parseStoryJSON{
+//    
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sampleServerResponse" ofType:@"json"];
+//    NSData *data = [NSData dataWithContentsOfFile:filePath];
+//    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//    
+//    
+//    NSLog(@"%@",json);
+//    
+//    //Parse Story Data
+//    [Character parseStoryData:json];
+//}
 
 
 @end
