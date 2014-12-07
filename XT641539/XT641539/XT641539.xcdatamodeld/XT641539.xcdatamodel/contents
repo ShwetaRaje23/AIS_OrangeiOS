@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Character" representedClassName="Character" syncable="YES">
         <attribute name="characterDesc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="characterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -10,6 +10,7 @@
     </entity>
     <entity name="Clue" representedClassName="Clue" syncable="YES">
         <attribute name="action" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="charactersInLocation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clueId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clueText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isSolved" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -31,7 +32,7 @@
     </entity>
     <elements>
         <element name="Character" positionX="-234" positionY="-270" width="128" height="133"/>
-        <element name="Clue" positionX="-47" positionY="-270" width="128" height="208"/>
+        <element name="Clue" positionX="-47" positionY="-270" width="128" height="225"/>
         <element name="DialogueMessage" positionX="-281" positionY="-58" width="128" height="133"/>
     </elements>
 </model>

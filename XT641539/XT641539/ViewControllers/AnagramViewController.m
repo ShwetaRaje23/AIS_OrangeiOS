@@ -9,7 +9,8 @@
 #import "AnagramViewController.h"
 #import "TargetView.h"
 #import <AudioToolbox/AudioToolbox.h>
-
+#import "ExplodeView.h"
+#import "StarDustView.h"
 #import "Character+Extended.h"
 
 
@@ -20,7 +21,6 @@
 @interface AnagramViewController ()
 
 @property (strong, nonatomic) NSMutableArray* myLetterOptions;
-
 @property (nonatomic,strong) NSManagedObjectContext* context;
 @property (nonatomic,strong) Character* loggedInCharacter;
 
@@ -178,10 +178,55 @@
 
 -(void)checkForSuccess
 {
-    self.clueToShow.clueText = [NSString stringWithFormat:@"%@ %@ %@ in %@ at %@",[_clueToShow.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":_clueToShow.clueForCharacter.name, _clueToShow.action, _clueToShow.object, _clueToShow.location, self.clueToShow.timestamp];
-    self.clueToShow.isSolved = [NSNumber numberWithBool:YES];
+//    for (TargetView* t in _targets) {
+//        //no success, bail out
+//        if (t.isMatched==NO) return;
+//    }
     
-    [self.clueToShow.managedObjectContext MR_saveToPersistentStoreAndWait];
+    CGFloat kScreenWidth = self.view.frame.size.width;
+
+    for (Clue *eachClue in _allClues) {
+        if ([eachClue.location isEqualToString:_clueToShow.location]) {
+            
+            NSString *tempClueText = [NSString stringWithFormat:@" Time: %@ \n Location: %@ \n People Present : %@",
+                                          eachClue.timestamp, eachClue.location, eachClue.charactersInLocation];
+            
+            eachClue.clueText = tempClueText;
+            
+//            eachClue.clueText = [NSString stringWithFormat:@"%@ %@ %@ in %@ at %@",[eachClue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":eachClue.clueForCharacter.name, eachClue.action, eachClue.object, eachClue.location, eachClue.timestamp];
+            eachClue.isSolved = [NSNumber numberWithBool:YES];
+            [eachClue.managedObjectContext MR_saveToPersistentStoreAndWait];
+        }
+    }
+    
+    
+//    self.clueToShow.clueText = [NSString stringWithFormat:@"%@ %@ %@ in %@ at %@",[_clueToShow.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":_clueToShow.clueForCharacter.name, _clueToShow.action, _clueToShow.object, _clueToShow.location, self.clueToShow.timestamp];
+//    self.clueToShow.isSolved = [NSNumber numberWithBool:YES];
+    
+//    [self.clueToShow.managedObjectContext MR_saveToPersistentStoreAndWait];
+    
+    //win animation
+    TargetView* firstTarget = _targets[0];
+    
+    int startX = 0;
+    int endX = kScreenWidth + 300;
+    int startY = firstTarget.center.y;
+    
+    StarDustView* stars = [[StarDustView alloc] initWithFrame:CGRectMake(startX, startY, 10, 10)];
+    
+    [self.view addSubview:stars];
+    [self.view sendSubviewToBack:stars];
+    
+    [UIView animateWithDuration:3
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         stars.center = CGPointMake(endX, startY);
+                     } completion:^(BOOL finished) {
+                         
+                         //game finished
+                         [stars removeFromSuperview];
+                     }];
     
     NSLog(@"Game Over");
     NSLog(@"Clue to show %@", _clueToShow);
@@ -210,6 +255,10 @@
                      completion:^(BOOL finished){
                          targetView.hidden = YES;
                      }];
+    
+    ExplodeView* explode = [[ExplodeView alloc] initWithFrame:CGRectMake(tileView.center.x,tileView.center.y,10,10)];
+    [tileView.superview addSubview: explode];
+    [tileView.superview sendSubviewToBack:explode];
 }
 
 #pragma mark Audio Stuff

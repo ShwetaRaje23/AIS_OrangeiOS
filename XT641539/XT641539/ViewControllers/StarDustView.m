@@ -1,17 +1,15 @@
-//
-//  ExplodeView.m
-//  Anagrams
-//
-//  Created by Marin Todorov on 16/02/2013.
-//  Copyright (c) 2013 Underplot ltd. All rights reserved.
-//
-
-#import "ExplodeView.h"
+#import "StarDustView.h"
 #import "QuartzCore/QuartzCore.h"
 
-@implementation ExplodeView
+@implementation StarDustView
 {
     CAEmitterLayer* _emitter;
+}
+
++ (Class) layerClass
+{
+    //configure the UIView to have emitter layer
+    return [CAEmitterLayer class];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -28,33 +26,32 @@
     return self;
 }
 
-+ (Class) layerClass
-{
-    //configure the UIView to have emitter layer
-    return [CAEmitterLayer class];
-}
-
 -(void)didMoveToSuperview
 {
     [super didMoveToSuperview];
+    
     if (self.superview==nil) return;
     
-    UIImage* texture = [UIImage imageNamed:@"particle.png"];
+    //load the texture image
+    UIImage* texture = [UIImage imageNamed: @"particle.png"];
     NSAssert(texture, @"particle.png not found");
     
+    //create new emitter cell
     CAEmitterCell* emitterCell = [CAEmitterCell emitterCell];
     
     emitterCell.contents = (__bridge id)[texture CGImage];
-    
     emitterCell.name = @"cell";
     
-    emitterCell.birthRate = 1000;
-    emitterCell.lifetime = 0.75;
+    emitterCell.birthRate = 200;
+    emitterCell.lifetime = 1.5;
     
     emitterCell.blueRange = 0.33;
     emitterCell.blueSpeed = -0.33;
     
-    emitterCell.velocity = 160;
+    emitterCell.yAcceleration = 100;
+    emitterCell.xAcceleration = -200;
+    
+    emitterCell.velocity = 100;
     emitterCell.velocityRange = 40;
     
     emitterCell.scaleRange = 0.5;
@@ -63,9 +60,6 @@
     emitterCell.emissionRange = M_PI*2;
     
     _emitter.emitterCells = @[emitterCell];
-    
-    [self performSelector:@selector(disableEmitterCell) withObject:nil afterDelay:0.1];
-    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:2.0];
 }
 
 -(void)disableEmitterCell

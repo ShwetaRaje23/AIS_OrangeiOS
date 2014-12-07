@@ -39,7 +39,6 @@
 		A03D91951A31ADC6003B8677 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A03D91771A31ADC6003B8677 /* MagicalRecord.m */; };
 		A03D92041A31C5E0003B8677 /* DialogueMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A03D92031A31C5E0003B8677 /* DialogueMessage.m */; };
 		A03D920A1A31C5E1003B8677 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = A03D92091A31C5E1003B8677 /* Character.m */; };
-		A03D921C1A31DD87003B8677 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = A03D921B1A31DD87003B8677 /* Clue.m */; };
 		A03D921F1A31E46A003B8677 /* ONGClueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03D921E1A31E46A003B8677 /* ONGClueDetailsViewController.m */; };
 		C12D0EEF19F6D4AA00EA2B26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D0EEE19F6D4AA00EA2B26 /* main.m */; };
 		C12D0EF219F6D4AA00EA2B26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D0EF119F6D4AA00EA2B26 /* AppDelegate.m */; };
@@ -65,9 +64,12 @@
 		D90431611A313BD500D9E398 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = D904315D1A313BD500D9E398 /* tile.png */; };
 		D90431621A313BD500D9E398 /* tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D904315E1A313BD500D9E398 /* tile@2x.png */; };
 		D90431651A31416100D9E398 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90431641A31416100D9E398 /* TargetView.m */; };
-		D904316F1A31479300D9E398 /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = D90431671A31479300D9E398 /* particle.png */; };
 		D9BBC3141A319030002566DD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BBC3131A319030002566DD /* Utils.m */; };
-		D9BBC3171A319645002566DD /* ExplodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BBC3161A319645002566DD /* ExplodeView.m */; };
+		D9E929EE1A34F393009F5B98 /* ExplodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E929ED1A34F393009F5B98 /* ExplodeView.m */; };
+		D9E929F11A34F4AD009F5B98 /* StarDustView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E929F01A34F4AD009F5B98 /* StarDustView.m */; };
+		D9E929F31A34F736009F5B98 /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E929F21A34F736009F5B98 /* particle.png */; };
+		D9E929F91A350DDE009F5B98 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E929F81A350DDE009F5B98 /* Clue.m */; };
+		D9E92A001A351B94009F5B98 /* notebook.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E929FF1A351B94009F5B98 /* notebook.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,11 +151,9 @@
 		A03D92031A31C5E0003B8677 /* DialogueMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogueMessage.m; sourceTree = "<group>"; };
 		A03D92081A31C5E1003B8677 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		A03D92091A31C5E1003B8677 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
-		A03D921A1A31DD87003B8677 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
-		A03D921B1A31DD87003B8677 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
 		A03D921D1A31E46A003B8677 /* ONGClueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ONGClueDetailsViewController.h; path = ViewControllers/ONGClueDetailsViewController.h; sourceTree = "<group>"; };
 		A03D921E1A31E46A003B8677 /* ONGClueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ONGClueDetailsViewController.m; path = ViewControllers/ONGClueDetailsViewController.m; sourceTree = "<group>"; };
-		C12D0EE919F6D4AA00EA2B26 /* XT641539.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XT641539.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12D0EE919F6D4AA00EA2B26 /* Orange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12D0EED19F6D4AA00EA2B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C12D0EEE19F6D4AA00EA2B26 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C12D0EF019F6D4AA00EA2B26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		C12D0EFA19F6D4AA00EA2B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C12D0EFC19F6D4AA00EA2B26 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C12D0EFF19F6D4AA00EA2B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C12D0F0519F6D4AA00EA2B26 /* XT641539Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XT641539Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12D0F0519F6D4AA00EA2B26 /* OrangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12D0F0A19F6D4AA00EA2B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C12D0F0B19F6D4AA00EA2B26 /* XT641539Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XT641539Tests.m; sourceTree = "<group>"; };
 		C12D0F1D19F6D61B00EA2B26 /* ONGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ONGHomeViewController.h; path = ViewControllers/ONGHomeViewController.h; sourceTree = "<group>"; };
@@ -194,11 +194,16 @@
 		D904315E1A313BD500D9E398 /* tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile@2x.png"; sourceTree = "<group>"; };
 		D90431631A31416100D9E398 /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetView.h; path = ViewControllers/TargetView.h; sourceTree = "<group>"; };
 		D90431641A31416100D9E398 /* TargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetView.m; path = ViewControllers/TargetView.m; sourceTree = "<group>"; };
-		D90431671A31479300D9E398 /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
 		D9BBC3121A319030002566DD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D9BBC3131A319030002566DD /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		D9BBC3151A319645002566DD /* ExplodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplodeView.h; path = ViewControllers/ExplodeView.h; sourceTree = "<group>"; };
-		D9BBC3161A319645002566DD /* ExplodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExplodeView.m; path = ViewControllers/ExplodeView.m; sourceTree = "<group>"; };
+		D9E929EC1A34F393009F5B98 /* ExplodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplodeView.h; path = ViewControllers/ExplodeView.h; sourceTree = "<group>"; };
+		D9E929ED1A34F393009F5B98 /* ExplodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExplodeView.m; path = ViewControllers/ExplodeView.m; sourceTree = "<group>"; };
+		D9E929EF1A34F4AD009F5B98 /* StarDustView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarDustView.h; path = ViewControllers/StarDustView.h; sourceTree = "<group>"; };
+		D9E929F01A34F4AD009F5B98 /* StarDustView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarDustView.m; path = ViewControllers/StarDustView.m; sourceTree = "<group>"; };
+		D9E929F21A34F736009F5B98 /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
+		D9E929F71A350DDE009F5B98 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
+		D9E929F81A350DDE009F5B98 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
+		D9E929FF1A351B94009F5B98 /* notebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notebook.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,8 +339,8 @@
 		C12D0EEA19F6D4AA00EA2B26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C12D0EE919F6D4AA00EA2B26 /* XT641539.app */,
-				C12D0F0519F6D4AA00EA2B26 /* XT641539Tests.xctest */,
+				C12D0EE919F6D4AA00EA2B26 /* Orange.app */,
+				C12D0F0519F6D4AA00EA2B26 /* OrangeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -455,10 +460,12 @@
 				D90431581A313AF900D9E398 /* TileView.m */,
 				D90431631A31416100D9E398 /* TargetView.h */,
 				D90431641A31416100D9E398 /* TargetView.m */,
-				D9BBC3151A319645002566DD /* ExplodeView.h */,
-				D9BBC3161A319645002566DD /* ExplodeView.m */,
 				A03D921D1A31E46A003B8677 /* ONGClueDetailsViewController.h */,
 				A03D921E1A31E46A003B8677 /* ONGClueDetailsViewController.m */,
+				D9E929EC1A34F393009F5B98 /* ExplodeView.h */,
+				D9E929ED1A34F393009F5B98 /* ExplodeView.m */,
+				D9E929EF1A34F4AD009F5B98 /* StarDustView.h */,
+				D9E929F01A34F4AD009F5B98 /* StarDustView.m */,
 			);
 			name = "Clues Tab";
 			sourceTree = "<group>";
@@ -509,8 +516,8 @@
 		C89A304E19FC637800650370 /* Subclass */ = {
 			isa = PBXGroup;
 			children = (
-				A03D921A1A31DD87003B8677 /* Clue.h */,
-				A03D921B1A31DD87003B8677 /* Clue.m */,
+				D9E929F71A350DDE009F5B98 /* Clue.h */,
+				D9E929F81A350DDE009F5B98 /* Clue.m */,
 				A03D92081A31C5E1003B8677 /* Character.h */,
 				A03D92091A31C5E1003B8677 /* Character.m */,
 				A03D92021A31C5E0003B8677 /* DialogueMessage.h */,
@@ -535,7 +542,8 @@
 		D904315A1A313BD500D9E398 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D90431671A31479300D9E398 /* particle.png */,
+				D9E929F21A34F736009F5B98 /* particle.png */,
+				D9E929FF1A351B94009F5B98 /* notebook.png */,
 				D904315B1A313BD500D9E398 /* slot.png */,
 				D904315C1A313BD500D9E398 /* slot@2x.png */,
 				D904315D1A313BD500D9E398 /* tile.png */,
@@ -570,7 +578,7 @@
 			);
 			name = Orange;
 			productName = XT641539;
-			productReference = C12D0EE919F6D4AA00EA2B26 /* XT641539.app */;
+			productReference = C12D0EE919F6D4AA00EA2B26 /* Orange.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C12D0F0419F6D4AA00EA2B26 /* OrangeTests */ = {
@@ -588,7 +596,7 @@
 			);
 			name = OrangeTests;
 			productName = XT641539Tests;
-			productReference = C12D0F0519F6D4AA00EA2B26 /* XT641539Tests.xctest */;
+			productReference = C12D0F0519F6D4AA00EA2B26 /* OrangeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -638,10 +646,11 @@
 				C12D0EFB19F6D4AA00EA2B26 /* Main.storyboard in Resources */,
 				C89A306F19FC698600650370 /* sampleServerResponse.json in Resources */,
 				D90431601A313BD500D9E398 /* slot@2x.png in Resources */,
+				D9E929F31A34F736009F5B98 /* particle.png in Resources */,
+				D9E92A001A351B94009F5B98 /* notebook.png in Resources */,
 				D90431621A313BD500D9E398 /* tile@2x.png in Resources */,
 				C12D0F0019F6D4AA00EA2B26 /* LaunchScreen.xib in Resources */,
 				C12D0EFD19F6D4AA00EA2B26 /* Images.xcassets in Resources */,
-				D904316F1A31479300D9E398 /* particle.png in Resources */,
 				D904315F1A313BD500D9E398 /* slot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,7 +674,6 @@
 				C12D0EF219F6D4AA00EA2B26 /* AppDelegate.m in Sources */,
 				A03D918A1A31ADC6003B8677 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				A03D918D1A31ADC6003B8677 /* NSPersistentStore+MagicalRecord.m in Sources */,
-				D9BBC3171A319645002566DD /* ExplodeView.m in Sources */,
 				C12D0F2319F6DAD200EA2B26 /* ONGCluesViewController.m in Sources */,
 				A03D91851A31ADC6003B8677 /* NSManagedObject+MagicalFinders.m in Sources */,
 				D90431491A3119E100D9E398 /* AnagramViewController.m in Sources */,
@@ -675,12 +683,14 @@
 				C89A30B719FC7A4500650370 /* Clue+Extended.m in Sources */,
 				A03D91951A31ADC6003B8677 /* MagicalRecord.m in Sources */,
 				A03D917F1A31ADC6003B8677 /* NSNumber+MagicalDataImport.m in Sources */,
+				D9E929EE1A34F393009F5B98 /* ExplodeView.m in Sources */,
 				D9BBC3141A319030002566DD /* Utils.m in Sources */,
 				A03D91921A31ADC6003B8677 /* MagicalRecord+Options.m in Sources */,
 				A03D920A1A31C5E1003B8677 /* Character.m in Sources */,
 				A03D92041A31C5E0003B8677 /* DialogueMessage.m in Sources */,
 				C12D0F1F19F6D61B00EA2B26 /* ONGHomeViewController.m in Sources */,
 				3125C1D019FD89C500576334 /* ONGDialogueMEssageTableViewCell.m in Sources */,
+				D9E929F11A34F4AD009F5B98 /* StarDustView.m in Sources */,
 				C89A307219FC6B2D00650370 /* Character+Extended.m in Sources */,
 				3125C1F419FDCBB800576334 /* ONGClueTableViewCell.m in Sources */,
 				3125C21219FDD19400576334 /* ONGUtils.m in Sources */,
@@ -697,7 +707,7 @@
 				A03D917D1A31ADC6003B8677 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				A03D91881A31ADC6003B8677 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				A03D91901A31ADC6003B8677 /* MagicalRecord+ErrorHandling.m in Sources */,
-				A03D921C1A31DD87003B8677 /* Clue.m in Sources */,
+				D9E929F91A350DDE009F5B98 /* Clue.m in Sources */,
 				A03D91861A31ADC6003B8677 /* NSManagedObject+MagicalRecord.m in Sources */,
 				D90431651A31416100D9E398 /* TargetView.m in Sources */,
 				A03D91841A31ADC6003B8677 /* NSManagedObject+MagicalDataImport.m in Sources */,

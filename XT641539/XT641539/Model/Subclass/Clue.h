@@ -2,7 +2,7 @@
 //  Clue.h
 //  XT641539
 //
-//  Created by Aditya Anupam on 12/5/14.
+//  Created by Sasha Azad on 07/12/14.
 //  Copyright (c) 2014 Orange. All rights reserved.
 //
 
@@ -20,8 +20,9 @@
 @property (nonatomic, retain) NSNumber * iteration;
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * object;
-@property (nonatomic, retain) NSString * timestamp;
 @property (nonatomic, retain) NSString * questText;
+@property (nonatomic, retain) NSString * timestamp;
+@property (nonatomic, retain) NSString * charactersInLocation;
 @property (nonatomic, retain) Character *clueForCharacter;
 @property (nonatomic, retain) Character *clueFromCharacter;
 

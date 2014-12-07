@@ -44,9 +44,14 @@
 
 + (NSDictionary*) parseStoryJSON {
     
-    NSDictionary *jsonResponse = [self sendSynchronousRequestOfType:@"GET" toUrlWithString:@"http://orange-server.herokuapp.com/tellMeAStory/" withData:nil];
-    NSLog(@"%@",jsonResponse);
+//    NSDictionary *jsonResponse = [self sendSynchronousRequestOfType:@"GET" toUrlWithString:@"http://orange-server.herokuapp.com/tellMeAStory/" withData:nil];
     
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sampleServerResponse" ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
+        NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+
+        NSLog(@"%@",jsonResponse);
+
     
     
     //Victim
@@ -82,7 +87,7 @@
         
         //Put first Clue
         Clue *firstClue = [Clue MR_createEntityInContext:context];
-        firstClue.clueText = [NSString stringWithFormat:@"%@ is dead ! Can you find the killer ?",victimName];
+        firstClue.clueText = [NSString stringWithFormat:@"The %@ is dead ! Can you find the killer ?",victimName];
         firstClue.isSolved = [NSNumber numberWithBool:YES];
         firstClue.clueId = [NSString stringWithFormat:@"-1"];
         
@@ -102,6 +107,10 @@
     
     //Clues
     NSArray* historyDict = [jsonResponse objectForKey:@"history"];
+    
+    //Characters
+    NSArray *characterDict = [jsonResponse objectForKey:@"characters"];
+    
     int i=-1;
     for (NSDictionary* history in historyDict) {
         
@@ -122,26 +131,39 @@
         clue.questText = @"You have a new clue !";
         
         
-        
         //Location
         NSNumber* locId = [history valueForKey:@"location"];
         clue.location = [self getValueForKey:@"name" matchingId:locId forKey:@"placeid" fromDict:locationDict];
         
         //Objects and people
-        
+        NSUInteger tempcount1=0;
         for (NSNumber* objid in [history valueForKey:@"objects_involved"]) {
-            [objectsStr appendString:[self getValueForKey:@"name" matchingId:objid forKey:@"objectid" fromDict:objectDict]];
+            if (tempcount1 != 0) {
+                [objectsStr appendString:@", "];
+            }
+           [objectsStr appendString:[self getValueForKey:@"name" matchingId:objid forKey:@"objectid" fromDict:objectDict]];
+            tempcount1++;
         }
         
+        NSUInteger tempcount2=0;
         for (NSNumber* objid in [history valueForKey:@"performed_on"]) {
-            [pplStr appendString:[self getValueForKey:@"name" matchingId:objid forKey:@"characterid" fromDict:objectDict]];
+            if (tempcount2 != 0) {
+                [pplStr appendString:@", "];
+            }
+            [pplStr appendString:[self getValueForKey:@"name" matchingId:objid forKey:@"characterid" fromDict:characterDict]];
+            NSLog(@"%@", pplStr);
+            tempcount2 ++;
         }
-        if (pplStr.length >0) {
-            clue.object = [NSString stringWithFormat:@"%@ and %@",objectsStr,pplStr];
-        }
-        else{
-            clue.object = objectsStr;
-        }
+        
+        clue.object = objectsStr;
+        clue.charactersInLocation = pplStr;
+        
+//        if (pplStr.length >0) {
+//            clue.object = [NSString stringWithFormat:@"%@ and **** %@",objectsStr,pplStr];
+//        }
+//        else{
+//            clue.object = objectsStr;
+//        }
         
     
         
@@ -154,7 +176,7 @@
         clue.clueForCharacter = me;
         
         
-        clue.clueText = [NSString stringWithFormat:@"%@ %@ %@ at the %@",me.name, clue.action, clue.object, clue.location];
+//        clue.clueText = [NSString stringWithFormat:@"%@ %@ %@ at the %@",me.name, clue.action, clue.object, clue.location];
         
         [context MR_saveToPersistentStoreAndWait];
     }

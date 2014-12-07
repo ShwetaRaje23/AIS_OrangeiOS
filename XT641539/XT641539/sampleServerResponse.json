@@ -1,93 +1,349 @@
 {
-"GameID":"XT2049",
-"characters":[
-				{
-				"name":"Maid",
-				 "characterID":"1",
-				 "role":"player"
-				},
-				{
-				"name":"Governor",
-				 "characterID":"0",
-				 "role":"victim"
-				},
-				{
-				"name":"Brother",
-				 "characterID":"2",
-				 "role":"player"
-				},
-				{
-				"name":"Uncle",
-				 "characterID":"3",
-				 "role":"player"
-				},
-				{
-				"name":"Secretary",
-				 "characterID":"4",
-				 "role":"murderer"
-				},
-				{
-				"name":"General",
-				 "characterID":"5",
-				 "role":"player"
-				}
-				],
-"storyHistory":[
-				{"timestamp":"09:30:16 pm",
-				 "action":"heard fight",
-				 "location":"garden",
-				 "characterID":"1",
-                 "clueId":"1"
-				},
-				{"timestamp":"10:30:16 pm",
-				 "action":"saw something",
-				 "location":"Governor's room",
-				 "characterID":"1",
-                "clueId":"2"
-				},
-				{"timestamp":"11:30:16 pm",
-				 "action":"caught in",
-				 "location":"Governor's bedroom",
-				 "characterID":"1",
-                "clueId":"3"
-				},
-				{"timestamp":"09:30:16 pm",
-				 "action":"saw someone",
-				 "location":"Governor's office",
-				 "characterID":"2",
-                "clueId":"4"
-				},
-				{"timestamp":"10:30:16 pm",
-				 "action":"saw someone",
-				 "location":"Governor's Room",
-				 "characterID":"2",
-                "clueId":"5"
-				},
-				{"timestamp":"11:30:16 pm",
-				 "action":"heard a conversation",
-				 "location":"Governor's Office",
-				 "characterID":"2",
-                "clueId":"6"
-				},
-				{"timestamp":"09:30:16 pm",
-				 "action":"saw something",
-				 "location":"Governor's Office",
-				 "characterID":"3",
-                "clueId":"7"
-				},
-				{"timestamp":"10:30:16 pm",
-				 "action":"did something",
-				 "location":"Governor's Office",
-				 "characterID":"3",
-                "clueId":"8"
-				},
-				{"timestamp":"11:30:16 pm",
-				 "action":"saw blood",
-				 "location":"Governor's House",
-				 "characterID":"3",
-                "clueId":"9"
+    "locations": [
+                  {
+                  "name": "Garden",
+                  "placeid": 1,
+                  "objects_in_loc": [
+                  
+                  ],
+                  "adjacent": [
+                               2,
+                               3,
+                               4
+                               ],
+                  "characters_in_loc": [
+                                        5
+                                        ]
+                  },
+                  {
+                  "name": "Fountain",
+                  "placeid": 2,
+                  "objects_in_loc": [
+                                     4
+                                     ],
+                  "adjacent": [
+                               4,
+                               5,
+                               8
+                               ],
+                  "characters_in_loc": [
+                                        1
+                                        ]
+                  },
+                  {
+                  "name": "Garage",
+                  "placeid": 3,
+                  "objects_in_loc": [
+                  
+                  ],
+                  "adjacent": [
+                               1,
+                               4,
+                               7
+                               ],
+                  "characters_in_loc": [
+                  
+                  ]
+                  },
+                  {
+                  "name": "Bedroom",
+                  "placeid": 4,
+                  "objects_in_loc": [
+                                     1
+                                     ],
+                  "adjacent": [
+                               1,
+                               3,
+                               7,
+                               5
+                               ],
+                  "characters_in_loc": [
+                                        4
+                                        ]
+                  },
+                  {
+                  "name": "Library",
+                  "placeid": 5,
+                  "objects_in_loc": [
+                                     2
+                                     ],
+                  "adjacent": [
+                               2,
+                               7,
+                               6,
+                               8
+                               ],
+                  "characters_in_loc": [
+                                        2,
+                                        3
+                                        ]
+                  },
+                  {
+                  "name": "Kitchen",
+                  "placeid": 6,
+                  "objects_in_loc": [
+                  
+                  ],
+                  "adjacent": [
+                               7,
+                               5,
+                               8
+                               ],
+                  "characters_in_loc": [
+                  
+                  ]
+                  },
+                  {
+                  "name": "Living Room",
+                  "placeid": 7,
+                  "objects_in_loc": [
+                  
+                  ],
+                  "adjacent": [
+                               5,
+                               6,
+                               4
+                               ],
+                  "characters_in_loc": [
+                  
+                  ]
+                  },
+                  {
+                  "name": "Office",
+                  "placeid": 8,
+                  "objects_in_loc": [
+                  
+                  ],
+                  "adjacent": [
+                               2,
+                               5,
+                               6
+                               ],
+                  "characters_in_loc": [
+                  
+                  ]
+                  }
+                  ],
+    "characters": [
+                   {
+                   "name": "Governor",
+                   "characterDescription": "Governor Arnold Capaldi has been running the small town of Amberlee for 3 years. He is known for his promiscuity and poor treatment of his employees.",
+                   "characterid": 1,
+                   "motive": ""
+                   },
+                   {
+                   "name": "Wife",
+                   "characterDescription": "Governor Arnold's wife, Lynda is a kind, beautiful woman. She trained as a doctor but left a promising career to support her husband in his long campaigns.",
+                   "characterid": 2,
+                   "motive": ""
+                   },
+                   {
+                   "name": "Brother",
+                   "characterDescription": "Thomas Capaldi, Governor Arnold's brother, is hot-headed and sincere but his efforts always seem to go un-noticed ",
+                   "characterid": 3,
+                   "motive": ""
+                   },
+                   {
+                   "name": "Maid",
+                   "characterDescription": "Their maid Marta has been working with the Capaldi's for about 8 years now. She loves gossip, but doesn't everyone? ",
+                   "characterid": 4,
+                   "motive": ""
+                   },
+                   {
+                   "name": "Secretary",
+                   "characterDescription": "Governor Arnold's secratary Julia loves attention. She knows a little too much about the Governor than his wife Lynda would like. ",
+                   "characterid": 5,
+                   "motive": ""
+                   }
+                   ],
+    "killer": 1,
+    "history": [
+                {
+                "iteration": 1,
+                "performed_on": [
                 
-				}
-				
-				]
+                ],
+                "objects_involved": [
+                                     4, 5, 2
+                                     ],
+                "performed_by": 4,
+                "action_id": 1,
+                "location": 4,
+                "time": "9:00"
+                },
+                {
+                "iteration": 1,
+                "performed_on": [
+                                 2,
+                                 3
+                                 ],
+                "objects_involved": [
+                                     2
+                                     ],
+                "performed_by": 1,
+                "action_id": 1,
+                "location": 5,
+                "time": "9:00"
+                },
+                {
+                "iteration": 2,
+                "performed_on": [
+                                 2,
+                                 5
+                                 ],
+                "objects_involved": [
+                                     5
+                                     ],
+                "performed_by": 1,
+                "action_id": 2,
+                "location": 6,
+                "time": "10:00"
+                },
+                {
+                "iteration": 2,
+                "performed_on": [
+                                 5,
+                                 3
+                                 ],
+                "objects_involved": [
+                                     6
+                                     ],
+                "performed_by": 4,
+                "action_id": 2,
+                "location": 5,
+                "time": "10:00"
+                },
+                {
+                "iteration": 3,
+                "performed_on": [
+                
+                ],
+                "objects_involved": [
+                                     7
+                                     ],
+                "performed_by": 4,
+                "action_id": 3,
+                "location": 5,
+                "time": "11:00"
+                },
+                {
+                "iteration": 3,
+                "performed_on": [
+                
+                ],
+                "objects_involved": [
+                                     4
+                                     ],
+                "performed_by": 1,
+                "action_id": 3,
+                "location": 2,
+                "time": "11:00"
+                },
+                {
+                "iteration": 4,
+                "performed_on": [
+                                 1
+                                 ],
+                "objects_involved": [
+                                     7
+                                     ],
+                "performed_by": 4,
+                "action_id": 5,
+                "location": 5,
+                "time": "12:00"
+                },
+                {
+                "iteration": 4,
+                "performed_on": [
+                                 4
+                                 ],
+                "objects_involved": [
+                
+                ],
+                "performed_by": 1,
+                "action_id": 8,
+                "location": 5,
+                "time": "12:00"
+                },
+                {
+                "iteration": 5,
+                "performed_on": [
+                                 1,
+                                 2
+                                 ],
+                "objects_involved": [
+                
+                ],
+                "performed_by": 4,
+                "action_id": 1,
+                "location": 4,
+                "time": "1:00"
+                },
+                {
+                "iteration": 5,
+                "performed_on": [
+                                 2
+                                 ],
+                "objects_involved": [
+                
+                ],
+                "performed_by": 1,
+                "action_id": 8,
+                "location": 4,
+                "time": "1:00"
+                }
+                ],
+    "victim": 2,
+    "motive": "Governor picked up love letter between Wife and Secretary.",
+    "objects": [
+                {
+                "name": "Knife",
+                "is_used": false,
+                "objectid": 1,
+                "after_use": "Bloody Knife",
+                "is_weapon": true
+                },
+                {
+                "name": "Poison",
+                "is_used": false,
+                "objectid": 2,
+                "after_use": "Empty Bottle",
+                "is_weapon": true
+                },
+                {
+                "name": "Twilight DVD",
+                "is_used": false,
+                "objectid": 4,
+                "after_use": "Empty Twilight DVD Case",
+                "is_weapon": true
+                },
+                {
+                "name": "Love Letter",
+                "is_used": false,
+                "objectid": 5,
+                "after_use": null,
+                "is_weapon": false
+                },
+                {
+                "name": "Secret Document",
+                "is_used": false,
+                "objectid": 6,
+                "after_use": null,
+                "is_weapon": false
+                },
+                {
+                "name": "Lipstick Stained Glass",
+                "is_used": false,
+                "objectid": 7,
+                "after_use": null,
+                "is_weapon": false
+                },
+                {
+                "name": "Dishcloth",
+                "is_used": false,
+                "objectid": 8,
+                "after_use": "Bloodstained Dishcloth",
+                "is_weapon": false
+                }
+                ]
 }

@@ -14,5 +14,6 @@
 @interface AnagramViewController : UIViewController <TileDragDelegateProtocol>
 
 @property (strong, nonatomic) Clue *clueToShow;
+@property (strong, nonatomic) NSMutableArray *allClues;
 
 @end

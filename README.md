@@ -10,10 +10,12 @@ The repository contains two folders - the orange server code and the iOS client 
 Done 
 ============
 1. If logged in before, play takes you to the Clues screen (or the tab controller) and not the character select.
+
 3. Clue management 
     Only get one unsolved clue at a time. 
     Get your clues first 
     Then get other people's clues 
+
 4. Quests : Anagrams 
 
 
@@ -21,7 +23,6 @@ Done
 To Do (UI)
 ===============
 1. Client Server synchronization (Django) 
-2. Push Notifications 
 
 5. Scoreboard
 6. Push Notifications on game over 
@@ -33,3 +34,5 @@ To Do (BETA)
 ===============
 1. Location based notifications/quests 
 2. Accelerometer based quests 
+3. Push Notifications 
+

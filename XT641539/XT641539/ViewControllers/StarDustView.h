@@ -1,5 +1,5 @@
 //
-//  ExplodeView.h
+//  StarDustView.h
 //  XT641539
 //
 //  Created by Sasha Azad on 07/12/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExplodeView : UIView
+@interface StarDustView : UIView
 
 @end

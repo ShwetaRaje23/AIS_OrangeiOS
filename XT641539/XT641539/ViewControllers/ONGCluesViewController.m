@@ -34,6 +34,8 @@
     [questsAndClues addObjectsFromArray:[[self.loggedInCharacter.clues filteredSetUsingPredicate:compoundPredicateForClues1] allObjects]];
     [self.solvedclues addObjectsFromArray:[[self.loggedInCharacter.clues filteredSetUsingPredicate:compoundPredicateForClues1] allObjects]];
     
+    
+    
     //    Get ONLY Your Own Quests first !!!
     NSPredicate* unsolvedClues = [NSPredicate predicateWithFormat:@"isSolved == %@",[NSNumber numberWithBool:NO]];
     NSPredicate* clueForUser = [NSPredicate predicateWithFormat:@"clueForCharacter.characterID == %@",self.loggedInCharacter.characterID];
@@ -43,7 +45,7 @@
     
     [questsAndClues addObjectsFromArray:unsolvedQuests];
     
-    NSLog(@"== Added %d and %d solved and unsolved clues",self.solvedclues.count, self.unsolvedclues.count);
+//    NSLog(@"== Added %d and %d solved and unsolved clues",self.solvedclues.count, self.unsolvedclues.count);
     
     
 //    if (unsolvedQuests.count > 0) {
@@ -92,6 +94,16 @@
     return 0;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    switch (indexPath.section) {
+        case 0:
+            return 44;
+        default:
+            return 104;
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
@@ -137,6 +149,9 @@
     if (displayString) {
             cell.clueOrQuestTextLabel.text = displayString?displayString:@"Damn, null cell !";
     }
+    
+    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
+    recipeImageView.image = [UIImage imageWithContentsOfFile:@"notebook.png"];
     
     return cell;
 }
@@ -212,6 +227,7 @@
     else{
         AnagramViewController *detailViewController = (AnagramViewController*)[segue destinationViewController];
         detailViewController.clueToShow = sender;
+        detailViewController.allClues = _unsolvedclues;
     }
 }
 

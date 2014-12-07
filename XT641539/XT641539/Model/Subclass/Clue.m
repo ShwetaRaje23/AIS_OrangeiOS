@@ -2,7 +2,7 @@
 //  Clue.m
 //  XT641539
 //
-//  Created by Aditya Anupam on 12/5/14.
+//  Created by Sasha Azad on 07/12/14.
 //  Copyright (c) 2014 Orange. All rights reserved.
 //
 
@@ -19,8 +19,9 @@
 @dynamic iteration;
 @dynamic location;
 @dynamic object;
-@dynamic timestamp;
 @dynamic questText;
+@dynamic timestamp;
+@dynamic charactersInLocation;
 @dynamic clueForCharacter;
 @dynamic clueFromCharacter;
 
