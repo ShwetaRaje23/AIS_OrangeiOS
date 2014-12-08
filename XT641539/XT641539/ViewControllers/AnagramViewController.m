@@ -194,6 +194,7 @@
             eachClue.clueText = tempClueText;
             
 //            eachClue.clueText = [NSString stringWithFormat:@"%@ %@ %@ in %@ at %@",[eachClue.clueForCharacter.name isEqualToString:self.loggedInCharacter.name]?@"You":eachClue.clueForCharacter.name, eachClue.action, eachClue.object, eachClue.location, eachClue.timestamp];
+            
             eachClue.isSolved = [NSNumber numberWithBool:YES];
             [eachClue.managedObjectContext MR_saveToPersistentStoreAndWait];
         }
@@ -229,7 +230,7 @@
                      }];
     
     NSLog(@"Game Over");
-    NSLog(@"Clue to show %@", _clueToShow);
+//    NSLog(@"Clue to show %@", _clueToShow);
     
 }
 

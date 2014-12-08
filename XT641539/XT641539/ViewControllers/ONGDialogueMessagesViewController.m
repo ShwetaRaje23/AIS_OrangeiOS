@@ -57,7 +57,8 @@ const int fromCharacterResponseTag = 0;
     //You can ask if there are no messages
     if (self.messages.count == 0) {
         return YES;
-    }else{
+    }
+    else {
         DialogueMessage* lastMessage = [self.messages lastObject];
         //You cannot ask if the last message was from a character asking you a question
         if ([lastMessage.recievedFromCharacter isEqualToNumber:[NSNumber numberWithBool:YES]]) {

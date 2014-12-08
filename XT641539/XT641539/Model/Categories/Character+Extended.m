@@ -124,9 +124,12 @@
     if (allClues.count > 0) {
         for (int i=0; i<MIN(4, allClues.count); i++) {
             Clue* clue = [allClues objectAtIndex:i];
-            NSString* question =[NSString stringWithFormat:@"What happened in the %@ ?",clue.location];
-            if (![questions containsObject:question]) {
-                [questions addObject:question];
+             NSLog(@"Clue is solved ::: %@ --- %@ -- %@", clue.isSolved, clue.location, clue.clueText);
+            if ([clue.isSolved isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+                NSString* question =[NSString stringWithFormat:@"What happened in the %@ ?",clue.location];
+                if (![questions containsObject:question]) {
+                    [questions addObject:question];
+                }
             }
         }
     }

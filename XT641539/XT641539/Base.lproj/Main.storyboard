@@ -448,11 +448,11 @@
             </objects>
             <point key="canvasLocation" x="770" y="920"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Talk-->
         <scene sceneID="Nia-eL-0jX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2EK-40-mvt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="JDX-Hg-CHh"/>
+                    <tabBarItem key="tabBarItem" title="Talk" id="JDX-Hg-CHh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9dJ-YF-e7x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -467,11 +467,11 @@
             </objects>
             <point key="canvasLocation" x="1415" y="119"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Whodunnit-->
         <scene sceneID="lDZ-aL-Hn4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d2k-3q-axL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="sAU-6e-vO2"/>
+                    <tabBarItem key="tabBarItem" title="Whodunnit" id="sAU-6e-vO2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UEU-QW-0yo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
